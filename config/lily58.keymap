@@ -21,6 +21,10 @@
 
 #define THUMBS LH0 LH1 LH2 LH3 RH0 RH1 RH2 RH3
 
+#define BASE 0
+#define LOWER 1
+#define RAISE 2
+
 ZMK_HOLD_TAP(hml,
     flavor = "balanced";
     tapping-term-ms = <280>;
@@ -45,22 +49,22 @@ ZMK_HOLD_TAP(hmr,
 
         default_layer {
             bindings = <
-//    ┌──────┬─────────────┬─────────────┬─────────────┬─────────────┬──────┐           ┌──────┬─────────────┬─────────────┬─────────────┬─────────────┬──────┐
-//    │ esc  │      1      │      2      │      3      │      4      │  5   │           │  6   │      7      │      8      │      9      │      0      │  `   │
-//    ├──────┼─────────────┼─────────────┼─────────────┼─────────────┼──────┤           ├──────┼─────────────┼─────────────┼─────────────┼─────────────┼──────┤
-//    │ tab  │      Q      │      W      │      E      │      R      │  T   │           │  Y   │      U      │      I      │      O      │      P      │  -   │
-//    ├──────┼─────────────┼─────────────┼─────────────┼─────────────┼──────┤           ├──────┼─────────────┼─────────────┼─────────────┼─────────────┼──────┤
-//    │ lctl │ &hml lgui A │ &hml lalt S │ &hml lsft D │ &hml lctl F │  G   │           │  H   │ &hmr lctl J │ &hmr rsft K │ &hmr lalt L │ &hmr lgui ; │  '   │
-//    ├──────┼─────────────┼─────────────┼─────────────┼─────────────┼──────┼─────┬─────┼──────┼─────────────┼─────────────┼─────────────┼─────────────┼──────┤
-//    │ lsft │      Z      │      X      │      C      │      V      │  B   │  [  │  ]  │  N   │      M      │      ,      │      .      │      /      │ rsft │
-//    └──────┴─────────────┴─────────────┼─────────────┼─────────────┼──────┼─────┼─────┼──────┼─────────────┼─────────────┼─────────────┴─────────────┴──────┘
-//                                       │    lalt     │    lgui     │ mo 1 │ spc │ ent │ mo 2 │    bspc     │    rgui     │
-//                                       └─────────────┴─────────────┴──────┴─────┴─────┴──────┴─────────────┴─────────────┘
-  &kp ESC     &kp N1        &kp N2        &kp N3         &kp N4         &kp N5                          &kp N6   &kp N7         &kp N8         &kp N9        &kp N0           &kp GRAVE
-  &kp TAB     &kp Q         &kp W         &kp E          &kp R          &kp T                           &kp Y    &kp U          &kp I          &kp O         &kp P            &kp MINUS
-  &kp LCTRL   &hml LGUI A   &hml LALT S   &hml LSHFT D   &hml LCTRL F   &kp G                           &kp H    &hmr LCTRL J   &hmr RSHFT K   &hmr LALT L   &hmr LGUI SEMI   &kp SQT
-  &kp LSHFT   &kp Z         &kp X         &kp C          &kp V          &kp B    &kp LBKT    &kp RBKT   &kp N    &kp M          &kp COMMA      &kp DOT       &kp FSLH         &kp RSHFT
-                                          &kp LALT       &kp LGUI       &mo 1    &kp SPACE   &kp RET    &mo 2    &kp BSPC       &kp RGUI
+//    ┌──────┬─────────────┬─────────────┬─────────────┬─────────────┬──────────┐           ┌────────────┬─────────────┬─────────────┬─────────────┬─────────────┬──────┐
+//    │ esc  │      1      │      2      │      3      │      4      │    5     │           │     6      │      7      │      8      │      9      │      0      │  `   │
+//    ├──────┼─────────────┼─────────────┼─────────────┼─────────────┼──────────┤           ├────────────┼─────────────┼─────────────┼─────────────┼─────────────┼──────┤
+//    │ tab  │      Q      │      W      │      E      │      R      │    T     │           │     Y      │      U      │      I      │      O      │      P      │  -   │
+//    ├──────┼─────────────┼─────────────┼─────────────┼─────────────┼──────────┤           ├────────────┼─────────────┼─────────────┼─────────────┼─────────────┼──────┤
+//    │ lctl │ &hml lgui A │ &hml lalt S │ &hml lsft D │ &hml lctl F │    G     │           │     H      │ &hmr lctl J │ &hmr rsft K │ &hmr lalt L │ &hmr lgui ; │  '   │
+//    ├──────┼─────────────┼─────────────┼─────────────┼─────────────┼──────────┼─────┬─────┼────────────┼─────────────┼─────────────┼─────────────┼─────────────┼──────┤
+//    │ lsft │      Z      │      X      │      C      │      V      │    B     │  [  │  ]  │     N      │      M      │      ,      │      .      │      /      │ rsft │
+//    └──────┴─────────────┴─────────────┼─────────────┼─────────────┼──────────┼─────┼─────┼────────────┼─────────────┼─────────────┼─────────────┴─────────────┴──────┘
+//                                       │    lalt     │    lgui     │ mo LOWER │ spc │ ent │ mo raltISE │    bspc     │    rgui     │
+//                                       └─────────────┴─────────────┴──────────┴─────┴─────┴────────────┴─────────────┴─────────────┘
+  &kp ESC     &kp N1        &kp N2        &kp N3         &kp N4         &kp N5                             &kp N6      &kp N7         &kp N8         &kp N9        &kp N0           &kp GRAVE
+  &kp TAB     &kp Q         &kp W         &kp E          &kp R          &kp T                              &kp Y       &kp U          &kp I          &kp O         &kp P            &kp MINUS
+  &kp LCTRL   &hml LGUI A   &hml LALT S   &hml LSHFT D   &hml LCTRL F   &kp G                              &kp H       &hmr LCTRL J   &hmr RSHFT K   &hmr LALT L   &hmr LGUI SEMI   &kp SQT
+  &kp LSHFT   &kp Z         &kp X         &kp C          &kp V          &kp B       &kp LBKT    &kp RBKT   &kp N       &kp M          &kp COMMA      &kp DOT       &kp FSLH         &kp RSHFT
+                                          &kp LALT       &kp LGUI       &mo LOWER   &kp SPACE   &kp RET    &mo RAISE   &kp BSPC       &kp RGUI
             >;
         };
 
