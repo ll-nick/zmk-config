@@ -27,6 +27,7 @@
 #define SYMBOL 2
 #define NAV 3
 #define MOUSE 4
+#define FN 5
 
 ZMK_HOLD_TAP(hml,
     flavor = "balanced";
@@ -152,6 +153,27 @@ ZMK_HOLD_TAP(hmr,
   &trans   &kp LGUI   &kp LALT   &kp LSHFT   &kp LCTRL   &trans                       &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_UP   &mmv MOVE_RIGHT   &trans   &trans
   &trans   &trans     &trans     &trans      &trans      &trans   &trans   &trans     &trans           &trans           &trans         &trans            &trans   &trans
                                  &trans      &trans      &trans   &trans   &mkp MB1   &mkp MB2         &mkp MB3         &trans
+            >;
+        };
+
+        fn_layer {
+            bindings = <
+//    ┌─────┬─────┬─────┬─────┬─────┬─────┐           ┌──────┬──────┬──────┬──────┬─────┬─────┐
+//    │     │     │     │     │     │     │           │      │      │      │      │     │     │
+//    ├─────┼─────┼─────┼─────┼─────┼─────┤           ├──────┼──────┼──────┼──────┼─────┼─────┤
+//    │     │ f9  │ f10 │ f11 │ f12 │     │           │      │      │      │      │     │     │
+//    ├─────┼─────┼─────┼─────┼─────┼─────┤           ├──────┼──────┼──────┼──────┼─────┼─────┤
+//    │     │ f5  │ f6  │ f7  │ f8  │     │           │ lgui │ lalt │ lsft │ lctl │     │     │
+//    ├─────┼─────┼─────┼─────┼─────┼─────┼─────┬─────┼──────┼──────┼──────┼──────┼─────┼─────┤
+//    │     │ f1  │ f2  │ f3  │ f4  │     │     │     │      │      │      │      │     │     │
+//    └─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┼──────┼──────┼──────┼──────┴─────┴─────┘
+//                      │     │     │     │     │     │      │      │      │
+//                      └─────┴─────┴─────┴─────┴─────┴──────┴──────┴──────┘
+  &trans   &trans   &trans    &trans    &trans    &trans                     &trans     &trans     &trans      &trans      &trans   &trans
+  &trans   &kp F9   &kp F10   &kp F11   &kp F12   &trans                     &trans     &trans     &trans      &trans      &trans   &trans
+  &trans   &kp F5   &kp F6    &kp F7    &kp F8    &trans                     &kp LGUI   &kp LALT   &kp LSHFT   &kp LCTRL   &trans   &trans
+  &trans   &kp F1   &kp F2    &kp F3    &kp F4    &trans   &trans   &trans   &trans     &trans     &trans      &trans      &trans   &trans
+                              &trans    &trans    &trans   &trans   &trans   &trans     &trans     &trans
             >;
         };
 
