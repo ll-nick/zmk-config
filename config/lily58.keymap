@@ -137,22 +137,22 @@ ZMK_HOLD_TAP(hmr,
 
         fn_layer {
             bindings = <
-//    ┌─────┬─────┬─────┬─────┬─────┬─────┐           ┌──────┬──────┬──────┬──────┬─────┬─────┐
-//    │     │     │     │     │     │     │           │      │      │      │      │     │     │
-//    ├─────┼─────┼─────┼─────┼─────┼─────┤           ├──────┼──────┼──────┼──────┼─────┼─────┤
-//    │     │ f9  │ f10 │ f11 │ f12 │     │           │      │      │      │      │     │     │
-//    ├─────┼─────┼─────┼─────┼─────┼─────┤           ├──────┼──────┼──────┼──────┼─────┼─────┤
-//    │     │ f5  │ f6  │ f7  │ f8  │     │           │ lgui │ lalt │ lsft │ lctl │     │     │
-//    ├─────┼─────┼─────┼─────┼─────┼─────┼─────┬─────┼──────┼──────┼──────┼──────┼─────┼─────┤
-//    │     │ f1  │ f2  │ f3  │ f4  │     │     │     │      │      │      │      │     │     │
-//    └─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┼──────┼──────┼──────┼──────┴─────┴─────┘
-//                      │     │     │     │     │     │      │      │      │
-//                      └─────┴─────┴─────┴─────┴─────┴──────┴──────┴──────┘
-  &trans   &trans   &trans    &trans    &trans    &trans                     &trans     &trans     &trans      &trans      &trans   &trans
-  &trans   &kp F9   &kp F10   &kp F11   &kp F12   &trans                     &trans     &trans     &trans      &trans      &trans   &trans
-  &trans   &kp F5   &kp F6    &kp F7    &kp F8    &trans                     &kp LGUI   &kp LALT   &kp LSHFT   &kp LCTRL   &trans   &trans
-  &trans   &kp F1   &kp F2    &kp F3    &kp F4    &trans   &trans   &trans   &trans     &trans     &trans      &trans      &trans   &trans
-                              &trans    &trans    &trans   &trans   &trans   &trans     &trans     &trans
+//    ┌─────┬─────┬─────┬─────┬─────┬─────┐           ┌─────┬──────┬──────┬──────┬──────┬─────┐
+//    │     │     │     │     │     │     │           │     │      │      │      │      │     │
+//    ├─────┼─────┼─────┼─────┼─────┼─────┤           ├─────┼──────┼──────┼──────┼──────┼─────┤
+//    │     │ f9  │ f10 │ f11 │ f12 │     │           │     │      │      │      │      │     │
+//    ├─────┼─────┼─────┼─────┼─────┼─────┤           ├─────┼──────┼──────┼──────┼──────┼─────┤
+//    │     │ f5  │ f6  │ f7  │ f8  │     │           │     │ lctl │ rsft │ lalt │ lgui │     │
+//    ├─────┼─────┼─────┼─────┼─────┼─────┼─────┬─────┼─────┼──────┼──────┼──────┼──────┼─────┤
+//    │     │ f1  │ f2  │ f3  │ f4  │     │     │     │     │      │      │      │      │     │
+//    └─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┼─────┼──────┼──────┼──────┴──────┴─────┘
+//                      │     │     │     │     │     │     │      │      │
+//                      └─────┴─────┴─────┴─────┴─────┴─────┴──────┴──────┘
+  &trans   &trans   &trans    &trans    &trans    &trans                     &trans   &trans      &trans      &trans     &trans     &trans
+  &trans   &kp F9   &kp F10   &kp F11   &kp F12   &trans                     &trans   &trans      &trans      &trans     &trans     &trans
+  &trans   &kp F5   &kp F6    &kp F7    &kp F8    &trans                     &trans   &kp LCTRL   &kp RSHFT   &kp LALT   &kp LGUI   &trans
+  &trans   &kp F1   &kp F2    &kp F3    &kp F4    &trans   &trans   &trans   &trans   &trans      &trans      &trans     &trans     &trans
+                              &trans    &trans    &trans   &trans   &trans   &trans   &trans      &trans
             >;
         };
 
