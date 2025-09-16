@@ -96,22 +96,22 @@ ZMK_HOLD_TAP(hmr,
 
         nav_layer {
             bindings = <
-//    ┌─────┬──────┬──────┬──────┬──────┬─────┐           ┌──────┬──────┬──────┬──────┬─────┬─────┐
-//    │     │      │      │      │      │     │           │      │      │      │      │     │     │
-//    ├─────┼──────┼──────┼──────┼──────┼─────┤           ├──────┼──────┼──────┼──────┼─────┼─────┤
-//    │     │      │      │      │      │     │           │ home │ PGDN │ PGup │ end  │     │     │
-//    ├─────┼──────┼──────┼──────┼──────┼─────┤           ├──────┼──────┼──────┼──────┼─────┼─────┤
-//    │     │ lgui │ lalt │ lsft │ lctl │     │           │ left │ down │  up  │ rght │     │     │
-//    ├─────┼──────┼──────┼──────┼──────┼─────┼─────┬─────┼──────┼──────┼──────┼──────┼─────┼─────┤
-//    │     │      │      │      │      │     │     │     │      │      │      │      │     │     │
-//    └─────┴──────┴──────┼──────┼──────┼─────┼─────┼─────┼──────┼──────┼──────┼──────┴─────┴─────┘
-//                        │      │      │     │     │     │      │      │      │
-//                        └──────┴──────┴─────┴─────┴─────┴──────┴──────┴──────┘
-  &trans   &trans     &trans     &trans      &trans      &trans                     &trans     &trans     &trans     &trans      &trans   &trans
-  &trans   &trans     &trans     &trans      &trans      &trans                     &kp HOME   &kp PGDN   &kp PGUP   &kp END     &trans   &trans
-  &trans   &kp LGUI   &kp LALT   &kp LSHFT   &kp LCTRL   &trans                     &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT   &trans   &trans
-  &trans   &trans     &trans     &trans      &trans      &trans   &trans   &trans   &trans     &trans     &trans     &trans      &trans   &trans
-                                 &trans      &trans      &trans   &trans   &trans   &trans     &trans     &trans
+//    ┌─────┬───────────────┬───────────────┬───────────────┬───────────────┬─────┐           ┌───────────────┬─────────────────────┬─────────────────────┬───────────────┬─────┬─────┐
+//    │     │               │               │               │               │     │           │               │                     │                     │               │     │     │
+//    ├─────┼───────────────┼───────────────┼───────────────┼───────────────┼─────┤           ├───────────────┼─────────────────────┼─────────────────────┼───────────────┼─────┼─────┤
+//    │     │               │               │               │               │     │           │     home      │        PGDN         │        PGup         │      end      │     │     │
+//    ├─────┼───────────────┼───────────────┼───────────────┼───────────────┼─────┤           ├───────────────┼─────────────────────┼─────────────────────┼───────────────┼─────┼─────┤
+//    │     │     lgui      │     lalt      │     lsft      │     lctl      │     │           │     left      │        down         │         up          │     rght      │     │     │
+//    ├─────┼───────────────┼───────────────┼───────────────┼───────────────┼─────┼─────┬─────┼───────────────┼─────────────────────┼─────────────────────┼───────────────┼─────┼─────┤
+//    │     │ lgui(lalt(1)) │ lgui(lalt(2)) │ lgui(lalt(3)) │ lgui(lalt(4)) │     │     │     │ lgui(lalt(H)) │ lsft(lgui(lalt(H))) │ lsft(lgui(lalt(L))) │ lgui(lalt(L)) │     │     │
+//    └─────┴───────────────┴───────────────┼───────────────┼───────────────┼─────┼─────┼─────┼───────────────┼─────────────────────┼─────────────────────┼───────────────┴─────┴─────┘
+//                                          │               │               │     │     │     │               │                     │                     │
+//                                          └───────────────┴───────────────┴─────┴─────┴─────┴───────────────┴─────────────────────┴─────────────────────┘
+  &trans   &trans           &trans           &trans           &trans           &trans                     &trans          &trans              &trans              &trans          &trans   &trans
+  &trans   &trans           &trans           &trans           &trans           &trans                     &kp HOME        &kp PGDN            &kp PGUP            &kp END         &trans   &trans
+  &trans   &kp LGUI         &kp LALT         &kp LSHFT        &kp LCTRL        &trans                     &kp LEFT        &kp DOWN            &kp UP              &kp RIGHT       &trans   &trans
+  &trans   &kp LG(LA(N1))   &kp LG(LA(N2))   &kp LG(LA(N3))   &kp LG(LA(N4))   &trans   &trans   &trans   &kp LG(LA(H))   &kp LS(LG(LA(H)))   &kp LS(LG(LA(L)))   &kp LG(LA(L))   &trans   &trans
+                                             &trans           &trans           &trans   &trans   &trans   &trans          &trans              &trans
             >;
         };
 
