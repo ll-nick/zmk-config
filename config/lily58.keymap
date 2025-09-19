@@ -76,22 +76,22 @@ ZMK_HOLD_TAP(hmr,
 
         num_layer {
             bindings = <
-//    ┌─────┬─────┬─────┬─────┬─────┬─────┐           ┌─────┬─────┬─────┬─────┬─────┬─────┐
-//    │     │     │     │     │     │     │           │     │     │     │     │     │     │
-//    ├─────┼─────┼─────┼─────┼─────┼─────┤           ├─────┼─────┼─────┼─────┼─────┼─────┤
-//    │     │     │     │     │     │     │           │  +  │  7  │  8  │  9  │  -  │     │
-//    ├─────┼─────┼─────┼─────┼─────┼─────┤           ├─────┼─────┼─────┼─────┼─────┼─────┤
-//    │     │     │     │     │     │     │           │  .  │  4  │  5  │  6  │  =  │ ent │
-//    ├─────┼─────┼─────┼─────┼─────┼─────┼─────┬─────┼─────┼─────┼─────┼─────┼─────┼─────┤
-//    │     │     │     │     │     │     │     │     │  *  │  1  │  2  │  3  │  /  │     │
-//    └─────┴─────┴─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┘
-//                      │     │     │     │     │  0  │     │     │     │
-//                      └─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┘
-  &trans   &trans   &trans   &trans   &trans   &trans                     &trans         &trans   &trans   &trans   &trans      &trans
-  &trans   &trans   &trans   &trans   &trans   &trans                     &kp PLUS       &kp N7   &kp N8   &kp N9   &kp MINUS   &trans
-  &trans   &trans   &trans   &trans   &trans   &trans                     &kp DOT        &kp N4   &kp N5   &kp N6   &kp EQUAL   &kp RET
-  &trans   &trans   &trans   &trans   &trans   &trans   &trans   &trans   &kp ASTERISK   &kp N1   &kp N2   &kp N3   &kp SLASH   &trans
-                             &trans   &trans   &trans   &trans   &kp N0   &trans         &trans   &trans
+//    ┌─────┬──────┬──────┬──────┬──────┬─────┐           ┌─────┬─────┬─────┬─────┬─────┬─────┐
+//    │     │      │      │      │      │     │           │     │     │     │     │     │     │
+//    ├─────┼──────┼──────┼──────┼──────┼─────┤           ├─────┼─────┼─────┼─────┼─────┼─────┤
+//    │     │      │      │      │      │     │           │  +  │  7  │  8  │  9  │  -  │     │
+//    ├─────┼──────┼──────┼──────┼──────┼─────┤           ├─────┼─────┼─────┼─────┼─────┼─────┤
+//    │     │ lgui │ lalt │ lsft │ lctl │     │           │  .  │  4  │  5  │  6  │  =  │ ent │
+//    ├─────┼──────┼──────┼──────┼──────┼─────┼─────┬─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+//    │     │      │      │      │      │     │     │     │  *  │  1  │  2  │  3  │  /  │     │
+//    └─────┴──────┴──────┼──────┼──────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┴─────┴─────┘
+//                        │      │      │     │     │  0  │     │     │     │
+//                        └──────┴──────┴─────┴─────┴─────┴─────┴─────┴─────┘
+  &trans   &trans     &trans     &trans      &trans      &trans                     &trans         &trans   &trans   &trans   &trans      &trans
+  &trans   &trans     &trans     &trans      &trans      &trans                     &kp PLUS       &kp N7   &kp N8   &kp N9   &kp MINUS   &trans
+  &trans   &kp LGUI   &kp LALT   &kp LSHFT   &kp LCTRL   &trans                     &kp DOT        &kp N4   &kp N5   &kp N6   &kp EQUAL   &kp RET
+  &trans   &trans     &trans     &trans      &trans      &trans   &trans   &trans   &kp ASTERISK   &kp N1   &kp N2   &kp N3   &kp SLASH   &trans
+                                 &trans      &trans      &trans   &trans   &kp N0   &trans         &trans   &trans
             >;
         };
 
