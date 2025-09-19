@@ -101,19 +101,19 @@ ZMK_HOLD_TAP(hmr,
 //    ┌─────┬─────────────┬─────────────┬─────────────┬─────────────┬─────┐           ┌─────┬─────────────┬─────────────┬─────────────┬─────────────┬─────┐
 //    │     │             │             │             │             │     │           │     │             │             │             │             │     │
 //    ├─────┼─────────────┼─────────────┼─────────────┼─────────────┼─────┤           ├─────┼─────────────┼─────────────┼─────────────┼─────────────┼─────┤
-//    │  ~  │      1      │      2      │      3      │      4      │  5  │           │  6  │      7      │      8      │      9      │      0      │     │
+//    │     │      !      │      +      │      <      │      >      │  ~  │           │  ^  │      {      │      }      │      $      │      \      │     │
 //    ├─────┼─────────────┼─────────────┼─────────────┼─────────────┼─────┤           ├─────┼─────────────┼─────────────┼─────────────┼─────────────┼─────┤
-//    │  \  │ &hml lgui [ │ &hml lalt ] │ &hml lsft _ │ &hml lctl = │  &  │           │  |  │ &hmr lctl ( │ &hmr rsft ) │ &hmr lalt { │ &hmr lgui } │  `  │
+//    │     │ &hml lgui : │ &hml lalt - │ &hml lsft * │ &hml lctl = │  &  │           │  |  │ &hmr lctl ( │ &hmr rsft ) │ &hmr lalt _ │ &hmr lgui ; │  '  │
 //    ├─────┼─────────────┼─────────────┼─────────────┼─────────────┼─────┼─────┬─────┼─────┼─────────────┼─────────────┼─────────────┼─────────────┼─────┤
-//    │  <  │      !      │      @      │      #      │      $      │  %  │     │     │  ^  │      +      │      -      │      *      │      /      │  >  │
+//    │     │      ?      │      `      │      [      │      ]      │  @  │     │     │  #  │      %      │      ,      │      .      │      /      │  "  │
 //    └─────┴─────────────┴─────────────┼─────────────┼─────────────┼─────┼─────┼─────┼─────┼─────────────┼─────────────┼─────────────┴─────────────┴─────┘
 //                                      │             │             │     │     │     │     │             │             │
 //                                      └─────────────┴─────────────┴─────┴─────┴─────┴─────┴─────────────┴─────────────┘
-  &trans          &trans                   &trans                    &trans                  &trans             &trans                            &trans      &trans                        &trans                         &trans                 &trans                  &trans
-  &kp TILDE       &kp N1                   &kp N2                    &kp N3                  &kp N4             &kp N5                            &kp N6      &kp N7                        &kp N8                         &kp N9                 &kp N0                  &trans
-  &kp BACKSLASH   &hml LGUI LEFT_BRACKET   &hml LALT RIGHT_BRACKET   &hml LSHFT UNDERSCORE   &hml LCTRL EQUAL   &kp AMPERSAND                     &kp PIPE    &hmr LCTRL LEFT_PARENTHESIS   &hmr RSHFT RIGHT_PARENTHESIS   &hmr LALT LEFT_BRACE   &hmr LGUI RIGHT_BRACE   &kp GRAVE
-  &kp LESS_THAN   &kp EXCLAMATION          &kp AT_SIGN               &kp POUND               &kp DOLLAR         &kp PERCENT     &trans   &trans   &kp CARET   &kp PLUS                      &kp MINUS                      &kp ASTERISK           &kp SLASH               &kp GREATER_THAN
-                                                                     &trans                  &trans             &trans          &trans   &trans   &trans      &trans                        &trans
+  &trans   &trans            &trans            &trans                &trans              &trans                            &trans      &trans                        &trans                         &trans                 &trans                &trans
+  &trans   &kp EXCLAMATION   &kp PLUS          &kp LESS_THAN         &kp GREATER_THAN    &kp TILDE                         &kp CARET   &kp LEFT_BRACE                &kp RIGHT_BRACE                &kp DOLLAR             &kp BACKSLASH         &trans
+  &trans   &hml LGUI COLON   &hml LALT MINUS   &hml LSHFT ASTERISK   &hml LCTRL EQUAL    &kp AMPERSAND                     &kp PIPE    &hmr LCTRL LEFT_PARENTHESIS   &hmr RSHFT RIGHT_PARENTHESIS   &hmr LALT UNDERSCORE   &hmr LGUI SEMICOLON   &kp SINGLE_QUOTE
+  &trans   &kp QUESTION      &kp GRAVE         &kp LEFT_BRACKET      &kp RIGHT_BRACKET   &kp AT          &trans   &trans   &kp HASH    &kp PERCENT                   &kp COMMA                      &kp DOT                &kp SLASH             &kp DOUBLE_QUOTES
+                                               &trans                &trans              &trans          &trans   &trans   &trans      &trans                        &trans
             >;
         };
 
