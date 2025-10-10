@@ -5,6 +5,8 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
+#include <behaviors/num_word.dtsi>
+
 #define LILY58_STANDARD_LABELS 1
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/key-labels/lily58.h"
@@ -59,6 +61,12 @@ ZMK_HOLD_TAP(hmr,
             timeout-ms = <50>;
             key-positions = <LH0 RH0>;
             bindings = <&caps_word>;
+        };
+
+        combo_numword {
+            timeout-ms = <50>;
+            key-positions = <LH1 RH0>;
+            bindings = <&num_word NUM>;
         };
     };
 };
