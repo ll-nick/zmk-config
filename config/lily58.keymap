@@ -27,10 +27,11 @@
 #define NUM 1
 #define SYMBOL 2
 #define NAV 3
-#define MOUSE 4
-#define FN 5
-#define MEDIA 6
-#define SYS 7
+#define UMLAUT 4
+#define MOUSE 5
+#define FN 6
+#define MEDIA 7
+#define SYS 8
 
 ZMK_HOLD_TAP(hml,
     flavor = "balanced";
@@ -68,22 +69,22 @@ ZMK_HOLD_TAP(hmr,
 
         default_layer {
             bindings = <
-//    ┌──────┬─────────────┬─────────────┬─────────────┬──────────────┬────────────┐                            ┌────────────┬─────────────┬─────────────┬─────────────┬─────────────┬──────┐
-//    │ esc  │      1      │      2      │      3      │      4       │     5      │                            │     6      │      7      │      8      │      9      │      0      │  `   │
-//    ├──────┼─────────────┼─────────────┼─────────────┼──────────────┼────────────┤                            ├────────────┼─────────────┼─────────────┼─────────────┼─────────────┼──────┤
-//    │ tab  │      Q      │      W      │      E      │      R       │     T      │                            │     Y      │      U      │      I      │      O      │      P      │  -   │
-//    ├──────┼─────────────┼─────────────┼─────────────┼──────────────┼────────────┤                            ├────────────┼─────────────┼─────────────┼─────────────┼─────────────┼──────┤
-//    │ lctl │ &hml lgui A │ &hml lalt S │ &hml lsft D │ &hml lctl F  │     G      │                            │     H      │ &hmr lctl J │ &hmr rsft K │ &hmr lalt L │ &hmr lgui ; │  '   │
-//    ├──────┼─────────────┼─────────────┼─────────────┼──────────────┼────────────┼────────────┬───────────────┼────────────┼─────────────┼─────────────┼─────────────┼─────────────┼──────┤
-//    │ lsft │      Z      │      X      │      C      │      V       │     B      │     [      │       ]       │     N      │      M      │      ,      │      .      │      /      │ ralt │
-//    └──────┴─────────────┴─────────────┼─────────────┼──────────────┼────────────┼────────────┼───────────────┼────────────┼─────────────┼─────────────┼─────────────┴─────────────┴──────┘
-//                                       │  mo MEDIA   │ lt MOUSE tab │ lt NUM esc │ lt NAV spc │ lt SYMBOL ent │ lt FN bspc │     del     │   mo SYS    │
-//                                       └─────────────┴──────────────┴────────────┴────────────┴───────────────┴────────────┴─────────────┴─────────────┘
-  &kp ESC     &kp N1        &kp N2        &kp N3         &kp N4          &kp N5                                         &kp N6        &kp N7         &kp N8         &kp N9        &kp N0           &kp GRAVE
-  &kp TAB     &kp Q         &kp W         &kp E          &kp R           &kp T                                          &kp Y         &kp U          &kp I          &kp O         &kp P            &kp MINUS
-  &kp LCTRL   &hml LGUI A   &hml LALT S   &hml LSHFT D   &hml LCTRL F    &kp G                                          &kp H         &hmr LCTRL J   &hmr RSHFT K   &hmr LALT L   &hmr LGUI SEMI   &kp SQT
-  &kp LSHFT   &kp Z         &kp X         &kp C          &kp V           &kp B         &kp LBKT        &kp RBKT         &kp N         &kp M          &kp COMMA      &kp DOT       &kp FSLH         &kp RALT
-                                          &mo MEDIA      &lt MOUSE TAB   &lt NUM ESC   &lt NAV SPACE   &lt SYMBOL RET   &lt FN BSPC   &kp DEL        &mo SYS
+//    ┌──────┬─────────────┬─────────────┬─────────────┬──────────────┬────────────┐                            ┌────────────┬─────────────────┬─────────────┬─────────────┬─────────────┬──────┐
+//    │ esc  │      1      │      2      │      3      │      4       │     5      │                            │     6      │        7        │      8      │      9      │      0      │  `   │
+//    ├──────┼─────────────┼─────────────┼─────────────┼──────────────┼────────────┤                            ├────────────┼─────────────────┼─────────────┼─────────────┼─────────────┼──────┤
+//    │ tab  │      Q      │      W      │      E      │      R       │     T      │                            │     Y      │        U        │      I      │      O      │      P      │  -   │
+//    ├──────┼─────────────┼─────────────┼─────────────┼──────────────┼────────────┤                            ├────────────┼─────────────────┼─────────────┼─────────────┼─────────────┼──────┤
+//    │ lctl │ &hml lgui A │ &hml lalt S │ &hml lsft D │ &hml lctl F  │     G      │                            │     H      │   &hmr lctl J   │ &hmr rsft K │ &hmr lalt L │ &hmr lgui ; │  '   │
+//    ├──────┼─────────────┼─────────────┼─────────────┼──────────────┼────────────┼────────────┬───────────────┼────────────┼─────────────────┼─────────────┼─────────────┼─────────────┼──────┤
+//    │ lsft │      Z      │      X      │      C      │      V       │     B      │     [      │       ]       │     N      │        M        │      ,      │      .      │      /      │ rsft │
+//    └──────┴─────────────┴─────────────┼─────────────┼──────────────┼────────────┼────────────┼───────────────┼────────────┼─────────────────┼─────────────┼─────────────┴─────────────┴──────┘
+//                                       │  mo MEDIA   │ lt MOUSE tab │ lt NUM esc │ lt NAV spc │ lt SYMBOL ent │ lt FN bspc │ lt UMlaltUT del │   mo SYS    │
+//                                       └─────────────┴──────────────┴────────────┴────────────┴───────────────┴────────────┴─────────────────┴─────────────┘
+  &kp ESC     &kp N1        &kp N2        &kp N3         &kp N4          &kp N5                                         &kp N6        &kp N7           &kp N8         &kp N9        &kp N0           &kp GRAVE
+  &kp TAB     &kp Q         &kp W         &kp E          &kp R           &kp T                                          &kp Y         &kp U            &kp I          &kp O         &kp P            &kp MINUS
+  &kp LCTRL   &hml LGUI A   &hml LALT S   &hml LSHFT D   &hml LCTRL F    &kp G                                          &kp H         &hmr LCTRL J     &hmr RSHFT K   &hmr LALT L   &hmr LGUI SEMI   &kp SQT
+  &kp LSHFT   &kp Z         &kp X         &kp C          &kp V           &kp B         &kp LBKT        &kp RBKT         &kp N         &kp M            &kp COMMA      &kp DOT       &kp FSLH         &kp RSHFT
+                                          &mo MEDIA      &lt MOUSE TAB   &lt NUM ESC   &lt NAV SPACE   &lt SYMBOL RET   &lt FN BSPC   &lt UMLAUT DEL   &mo SYS
             >;
         };
 
@@ -148,6 +149,27 @@ ZMK_HOLD_TAP(hmr,
   &trans   &kp LGUI         &kp LALT         &kp LSHFT        &kp LCTRL        &trans                     &kp LEFT        &kp DOWN            &kp UP              &kp RIGHT       &trans   &trans
   &trans   &kp LG(LA(N1))   &kp LG(LA(N2))   &kp LG(LA(N3))   &kp LG(LA(N4))   &trans   &trans   &trans   &kp LG(LA(H))   &kp LS(LG(LA(H)))   &kp LS(LG(LA(L)))   &kp LG(LA(L))   &trans   &trans
                                              &trans           &trans           &trans   &trans   &trans   &trans          &trans              &trans
+            >;
+        };
+
+        umlaut_layer {
+            bindings = <
+//    ┌─────┬─────────┬─────────┬─────────┬─────┬─────┐           ┌─────┬─────────┬─────┬─────────┬─────┬─────┐
+//    │     │         │         │         │     │     │           │     │         │     │         │     │     │
+//    ├─────┼─────────┼─────────┼─────────┼─────┼─────┤           ├─────┼─────────┼─────┼─────────┼─────┼─────┤
+//    │     │         │         │ ralt(5) │     │     │           │     │ ralt(U) │     │ ralt(O) │     │     │
+//    ├─────┼─────────┼─────────┼─────────┼─────┼─────┤           ├─────┼─────────┼─────┼─────────┼─────┼─────┤
+//    │     │ ralt(A) │ ralt(S) │         │     │     │           │     │         │     │         │     │     │
+//    ├─────┼─────────┼─────────┼─────────┼─────┼─────┼─────┬─────┼─────┼─────────┼─────┼─────────┼─────┼─────┤
+//    │     │         │         │         │     │     │     │     │     │         │     │         │     │     │
+//    └─────┴─────────┴─────────┼─────────┼─────┼─────┼─────┼─────┼─────┼─────────┼─────┼─────────┴─────┴─────┘
+//                              │         │     │     │     │     │     │         │     │
+//                              └─────────┴─────┴─────┴─────┴─────┴─────┴─────────┴─────┘
+  &trans   &trans      &trans      &trans       &trans   &trans                     &trans   &trans      &trans   &trans      &trans   &trans
+  &trans   &trans      &trans      &kp RA(N5)   &trans   &trans                     &trans   &kp RA(U)   &trans   &kp RA(O)   &trans   &trans
+  &trans   &kp RA(A)   &kp RA(S)   &trans       &trans   &trans                     &trans   &trans      &trans   &trans      &trans   &trans
+  &trans   &trans      &trans      &trans       &trans   &trans   &trans   &trans   &trans   &trans      &trans   &trans      &trans   &trans
+                                   &trans       &trans   &trans   &trans   &trans   &trans   &trans      &trans
             >;
         };
 
