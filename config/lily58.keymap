@@ -217,21 +217,21 @@ ZMK_HOLD_TAP(hmr,
 
         sys_layer {
             bindings = <
-//    ┌────────┬──────────┬──────────┬──────────┬──────────┬──────────┐           ┌─────┬──────────┬─────┬─────┬─────┬─────┐
-//    │ bt_clr │ bt_sel 0 │ bt_sel 1 │ bt_sel 2 │ bt_sel 3 │ bt_sel 4 │           │     │          │     │     │     │     │
-//    ├────────┼──────────┼──────────┼──────────┼──────────┼──────────┤           ├─────┼──────────┼─────┼─────┼─────┼─────┤
-//    │        │          │          │          │          │          │           │     │ out_ usb │     │     │     │     │
-//    ├────────┼──────────┼──────────┼──────────┼──────────┼──────────┤           ├─────┼──────────┼─────┼─────┼─────┼─────┤
-//    │        │          │          │          │   boot   │          │           │     │   boot   │     │     │     │     │
-//    ├────────┼──────────┼──────────┼──────────┼──────────┼──────────┼─────┬─────┼─────┼──────────┼─────┼─────┼─────┼─────┤
-//    │        │          │          │          │          │ out_ ble │     │     │     │          │     │     │     │     │
-//    └────────┴──────────┴──────────┼──────────┼──────────┼──────────┼─────┼─────┼─────┼──────────┼─────┼─────┴─────┴─────┘
-//                                   │          │          │          │     │     │     │          │     │
-//                                   └──────────┴──────────┴──────────┴─────┴─────┴─────┴──────────┴─────┘
-  &bt BT_CLR   &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4                     &trans   &trans         &trans   &trans   &trans   &trans
-  &trans       &trans         &trans         &trans         &trans         &trans                           &trans   &out OUT_USB   &trans   &trans   &trans   &trans
-  &trans       &trans         &trans         &trans         &bootloader    &trans                           &trans   &bootloader    &trans   &trans   &trans   &trans
-  &trans       &trans         &trans         &trans         &trans         &out OUT_BLE   &trans   &trans   &trans   &trans         &trans   &trans   &trans   &trans
+//    ┌────────┬────────────┬──────────┬──────────┬──────────┬──────────┐           ┌─────┬──────────┬─────┬─────┬────────────┬─────┐
+//    │ bt_clr │  bt_sel 0  │ bt_sel 1 │ bt_sel 2 │ bt_sel 3 │ bt_sel 4 │           │     │          │     │     │            │     │
+//    ├────────┼────────────┼──────────┼──────────┼──────────┼──────────┤           ├─────┼──────────┼─────┼─────┼────────────┼─────┤
+//    │        │            │          │          │          │          │           │     │ out_ usb │     │     │            │     │
+//    ├────────┼────────────┼──────────┼──────────┼──────────┼──────────┤           ├─────┼──────────┼─────┼─────┼────────────┼─────┤
+//    │        │ &sys_reset │          │          │   boot   │          │           │     │   boot   │     │     │ &sys_reset │     │
+//    ├────────┼────────────┼──────────┼──────────┼──────────┼──────────┼─────┬─────┼─────┼──────────┼─────┼─────┼────────────┼─────┤
+//    │        │            │          │          │          │ out_ ble │     │     │     │          │     │     │            │     │
+//    └────────┴────────────┴──────────┼──────────┼──────────┼──────────┼─────┼─────┼─────┼──────────┼─────┼─────┴────────────┴─────┘
+//                                     │          │          │          │     │     │     │          │     │
+//                                     └──────────┴──────────┴──────────┴─────┴─────┴─────┴──────────┴─────┘
+  &bt BT_CLR   &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4                     &trans   &trans         &trans   &trans   &trans       &trans
+  &trans       &trans         &trans         &trans         &trans         &trans                           &trans   &out OUT_USB   &trans   &trans   &trans       &trans
+  &trans       &sys_reset     &trans         &trans         &bootloader    &trans                           &trans   &bootloader    &trans   &trans   &sys_reset   &trans
+  &trans       &trans         &trans         &trans         &trans         &out OUT_BLE   &trans   &trans   &trans   &trans         &trans   &trans   &trans       &trans
                                              &trans         &trans         &trans         &trans   &trans   &trans   &trans         &trans
             >;
         };
