@@ -37,14 +37,13 @@ return {
           SYS = "",
           ___ = " ",
 
-          -- 🔤 Unicode Layer
-          ["&uc UC_DE_AE"] = "Ä",
-          ["&uc UC_DE_SS"] = "ß",
-          ["&uc UC_DE_UE"] = "Ü",
-          ["&uc UC_DE_OE"] = "Ö",
-          ["&uc UC_CURR_EURO"] = "€",
-          ["&uc UC_CURR_DOLLAR"] = "$",
-          ["&uc UC_CURR_POUND"] = "£",
+          -- Umlaut Layer
+          ["RA(E)"] = "Ë",
+          ["RA(A)"] = "Ä",
+          ["RA(S)"] = "ß",
+          ["RA(U)"] = "Ü",
+          ["RA(O)"] = "Ö",
+          ["RA(N5)"] = "€",
 
           -- 🐭 Mouse Layer
           ["&mmv MOVE_LEFT"] = "󰍽 󰁍",
