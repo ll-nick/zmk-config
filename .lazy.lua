@@ -1,9 +1,9 @@
 return {
   {
     "codethread/qmk.nvim",
-    ft = { "c", "dts" }, -- QMK uses C, ZMK uses devicetree (ft=dts)
+    ft = { "c", "dts" },
     opts = {
-      name = "lily58_layout", -- arbitrary name for zmk
+      name = "lily58_layout",
       variant = "zmk",
       comment_preview = {
         keymap_overrides = {
@@ -34,7 +34,6 @@ return {
           RET = "⏎",
           SPACE = "␣",
           DEL = "⌦",
-          SYS = "",
           ___ = " ",
 
           -- Umlaut Layer
@@ -46,6 +45,7 @@ return {
           ["RA(N5)"] = "€",
 
           -- 🐭 Mouse Layer
+          MOUSE = "󰍽",
           ["&mmv MOVE_LEFT"] = "󰍽 󰁍",
           ["&mmv MOVE_RIGHT"] = "󰍽 󰁔",
           ["&mmv MOVE_UP"] = "󰍽 󰁝",
@@ -73,6 +73,7 @@ return {
           F12 = "F12",
 
           -- 🎵 Media Layer
+          MEDIA = "󰕾",
           ["&kp C_PREVIOUS"] = "󰒮",
           ["&kp C_NEXT"] = "󰒭",
           ["&kp C_PLAY_PAUSE"] = "/",
@@ -81,6 +82,7 @@ return {
           ["&kp C_VOLUME_DOWN"] = "󰕿",
 
           -- 🖥️ System Layer
+          SYS = "",
           ["&sys_reset"] = "RESET",
           ["&bootloader"] = "BOOT",
           ["&bt BT_CLR"] = "󰂭",
@@ -98,20 +100,11 @@ return {
           ["&lt"] = "",
           ["&mo"] = "",
 
-          -- Shortcuts
-          ["&kp LG(LA(N1))"] = "🐧 + ⎇ + 1",
-          ["&kp LG(LA(N2))"] = "🐧 + ⎇ + 2",
-          ["&kp LG(LA(N3))"] = "🐧 + ⎇ + 3",
-          ["&kp LG(LA(N4))"] = "🐧 + ⎇ + 4",
-
-          ["&kp LG(LA(H))"] = "🐧 + ⎇ + H",
-          ["&kp LG(LA(L))"] = "🐧 + ⎇ + L",
-          ["&kp LS(LG(LA(H)))"] = "🐧 + ⇧ + ⎇ + H",
-          ["&kp LS(LG(LA(L)))"] = "🐧 + ⇧ + ⎇ + L",
-
-          -- 🖱️ General icons
-          MOUSE = "󰍽",
-          MEDIA = "󰕾",
+          -- Modifiers
+          ["LG("] = "🐧 + ",
+          ["LA("] = "⎇ + ",
+          ["LS("] = "⇧ + ",
+          [")"] = "", -- This breaks the parentheses on the symbol layer but simplifies the shortcuts by a lot
         },
       },
       layout = {
