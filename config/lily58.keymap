@@ -31,9 +31,8 @@
 #define NAV 3
 #define UMLAUT 4
 #define MOUSE 5
-#define FN 6
-#define MEDIA 7
-#define SYS 8
+#define MEDIA 6
+#define SYS 7
 
 ZMK_HOLD_TAP(hml,
     flavor = "balanced";
@@ -54,6 +53,24 @@ ZMK_HOLD_TAP(hmr,
     hold-trigger-on-release;
     bindings = <&kp>, <&kp>;
 )
+
+
+/ {
+    behaviors {
+        comsemi: comma_semicolon {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp SEMI>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        dotcol: dot_colon {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp COLON>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+    };
+};
 
 / {
     combos {
@@ -79,43 +96,43 @@ ZMK_HOLD_TAP(hmr,
 
         default_layer {
             bindings = <
-//    ┌───┬────────┬────────┬────────┬────────┬────────┐                    ┌───────┬─────────────┬────────┬────────┬────────┬───┐
-//    │ 󱊷 │   1    │   2    │   3    │   4    │   5    │                    │   6   │      7      │   8    │   9    │   0    │ ` │
-//    ├───┼────────┼────────┼────────┼────────┼────────┤                    ├───────┼─────────────┼────────┼────────┼────────┼───┤
-//    │  │   Q    │   W    │   E    │   R    │   T    │                    │   Y   │      U      │   I    │   O    │   P    │ - │
-//    ├───┼────────┼────────┼────────┼────────┼────────┤                    ├───────┼─────────────┼────────┼────────┼────────┼───┤
-//    │ ⌃ │ : 󰻀 A │ : ⎇ S │ : ⇧ D │ : ⌃ F │   G    │                    │   H   │   : ⌃ J    │ : ⇧ K │ : ⎇ L │ : 󰻀 ; │ ' │
-//    ├───┼────────┼────────┼────────┼────────┼────────┼────────┬───────────┼───────┼─────────────┼────────┼────────┼────────┼───┤
-//    │ ⇧ │   Z    │   X    │   C    │   V    │   B    │   [    │     ]     │   N   │      M      │   ,    │   .    │   /    │ ⇧ │
-//    └───┴────────┴────────┼────────┼────────┼────────┼────────┼───────────┼───────┼─────────────┼────────┼────────┴────────┴───┘
-//                          │    󰕾   │   󰍽   │  NUM 󱊷 │  NAV ␣ │  SYMBOL ⏎ │  FN ⌫ │  UMlaltUT ⌦ │       │
-//                          └────────┴────────┴────────┴────────┴───────────┴───────┴─────────────┴────────┘
-  &kp ESC     &kp N1        &kp N2        &kp N3         &kp N4          &kp N5                                         &kp N6        &kp N7           &kp N8         &kp N9        &kp N0           &kp GRAVE
-  &kp TAB     &kp Q         &kp W         &kp E          &kp R           &kp T                                          &kp Y         &kp U            &kp I          &kp O         &kp P            &kp MINUS
-  &kp LCTRL   &hml LGUI A   &hml LALT S   &hml LSHFT D   &hml LCTRL F    &kp G                                          &kp H         &hmr LCTRL J     &hmr RSHFT K   &hmr LALT L   &hmr LGUI SEMI   &kp SQT
-  &kp LSHFT   &kp Z         &kp X         &kp C          &kp V           &kp B         &kp LBKT        &kp RBKT         &kp N         &kp M            &kp COMMA      &kp DOT       &kp FSLH         &kp RSHFT
-                                          &mo MEDIA      &lt MOUSE TAB   &lt NUM ESC   &lt NAV SPACE   &lt SYMBOL RET   &lt FN BSPC   &lt UMLAUT DEL   &mo SYS
+//    ┌───┬────────┬────────┬────────┬────────┬────────┐                    ┌───┬─────────────┬──────────┬─────────┬────────┬───┐
+//    │ 󱊷 │   1    │   2    │   3    │   4    │   5    │                    │ 6 │      7      │    8     │    9    │   0    │ ` │
+//    ├───┼────────┼────────┼────────┼────────┼────────┤                    ├───┼─────────────┼──────────┼─────────┼────────┼───┤
+//    │  │   Q    │   W    │   E    │   R    │   T    │                    │ Y │      U      │    I     │    O    │   P    │ - │
+//    ├───┼────────┼────────┼────────┼────────┼────────┤                    ├───┼─────────────┼──────────┼─────────┼────────┼───┤
+//    │ ⌃ │ : 󰻀 A │ : ⎇ S │ : ⇧ D │ : ⌃ F │   G    │                    │ H │   : ⌃ J    │  : ⇧ K  │ : ⎇ L  │ : 󰻀 ⌫ │ ' │
+//    ├───┼────────┼────────┼────────┼────────┼────────┼────────┬───────────┼───┼─────────────┼──────────┼─────────┼────────┼───┤
+//    │ ⇧ │   Z    │   X    │   C    │   V    │   B    │   [    │     ]     │ N │      M      │ &comsemi │ &dotcol │   /    │ ⇧ │
+//    └───┴────────┴────────┼────────┼────────┼────────┼────────┼───────────┼───┼─────────────┼──────────┼─────────┴────────┴───┘
+//                          │    󰕾   │   󰍽   │  NUM 󱊷 │  NAV ␣ │  SYMBOL ⏎ │ ⇧ │  UMlaltUT ⌦ │         │
+//                          └────────┴────────┴────────┴────────┴───────────┴───┴─────────────┴──────────┘
+  &kp ESC     &kp N1        &kp N2        &kp N3         &kp N4          &kp N5                                         &kp N6      &kp N7           &kp N8         &kp N9        &kp N0           &kp GRAVE
+  &kp TAB     &kp Q         &kp W         &kp E          &kp R           &kp T                                          &kp Y       &kp U            &kp I          &kp O         &kp P            &kp MINUS
+  &kp LCTRL   &hml LGUI A   &hml LALT S   &hml LSHFT D   &hml LCTRL F    &kp G                                          &kp H       &hmr LCTRL J     &hmr RSHFT K   &hmr LALT L   &hmr LGUI BSPC   &kp SQT
+  &kp LSHFT   &kp Z         &kp X         &kp C          &kp V           &kp B         &kp LBKT        &kp RBKT         &kp N       &kp M            &comsemi       &dotcol       &kp FSLH         &kp RSHFT
+                                          &mo MEDIA      &lt MOUSE TAB   &lt NUM ESC   &lt NAV SPACE   &lt SYMBOL RET   &kp LSHFT   &lt UMLAUT DEL   &mo SYS
             >;
         };
 
         num_layer {
             bindings = <
-//    ┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
-//    │   │   │   │   │   │   │       │   │   │   │   │   │   │
-//    ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
-//    │   │   │   │   │   │   │       │ + │ 7 │ 8 │ 9 │ - │   │
-//    ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
-//    │   │ 󰻀 │ ⎇ │ ⇧ │ ⌃ │   │       │ . │ 4 │ 5 │ 6 │ = │ ⏎ │
-//    ├───┼───┼───┼───┼───┼───┼───┬───┼───┼───┼───┼───┼───┼───┤
-//    │   │   │   │   │   │   │   │   │ * │ 1 │ 2 │ 3 │ / │   │
-//    └───┴───┴───┼───┼───┼───┼───┼───┼───┼───┼───┼───┴───┴───┘
-//                │   │   │   │   │ 0 │   │   │   │
-//                └───┴───┴───┴───┴───┴───┴───┴───┘
-  ___   ___        ___        ___         ___         ___                  ___            ___      ___      ___      ___         ___
-  ___   ___        ___        ___         ___         ___                  &kp PLUS       &kp N7   &kp N8   &kp N9   &kp MINUS   ___
-  ___   &kp LGUI   &kp LALT   &kp LSHFT   &kp LCTRL   ___                  &kp DOT        &kp N4   &kp N5   &kp N6   &kp EQUAL   &kp RET
-  ___   ___        ___        ___         ___         ___   ___   ___      &kp ASTERISK   &kp N1   &kp N2   &kp N3   &kp SLASH   ___
-                              ___         ___         ___   ___   &kp N0   ___            ___      ___
+//    ┌───┬─────────┬─────────┬─────────┬─────────┬───┐       ┌───┬───┬───┬───┬───┬───┐
+//    │   │         │         │         │         │   │       │   │   │   │   │   │   │
+//    ├───┼─────────┼─────────┼─────────┼─────────┼───┤       ├───┼───┼───┼───┼───┼───┤
+//    │   │   F9    │   F10   │   F11   │   F12   │   │       │ + │ 7 │ 8 │ 9 │ - │   │
+//    ├───┼─────────┼─────────┼─────────┼─────────┼───┤       ├───┼───┼───┼───┼───┼───┤
+//    │   │ : 󰻀 F5 │ : ⎇ F6 │ : ⇧ F7 │ : ⌃ F8 │   │       │ . │ 4 │ 5 │ 6 │ = │   │
+//    ├───┼─────────┼─────────┼─────────┼─────────┼───┼───┬───┼───┼───┼───┼───┼───┼───┤
+//    │   │   F1    │   F2    │   F3    │   F4    │   │   │   │ * │ 1 │ 2 │ 3 │ / │   │
+//    └───┴─────────┴─────────┼─────────┼─────────┼───┼───┼───┼───┼───┼───┼───┴───┴───┘
+//                            │         │         │   │   │   │ 0 │   │   │
+//                            └─────────┴─────────┴───┴───┴───┴───┴───┴───┘
+  ___   ___            ___            ___             ___             ___               ___            ___      ___      ___      ___         ___
+  ___   &kp F9         &kp F10        &kp F11         &kp F12         ___               &kp PLUS       &kp N7   &kp N8   &kp N9   &kp MINUS   ___
+  ___   &hml LGUI F5   &hml LALT F6   &hml LSHFT F7   &hml LCTRL F8   ___               &kp DOT        &kp N4   &kp N5   &kp N6   &kp EQUAL   ___
+  ___   &kp F1         &kp F2         &kp F3          &kp F4          ___   ___   ___   &kp ASTERISK   &kp N1   &kp N2   &kp N3   &kp SLASH   ___
+                                      ___             ___             ___   ___   ___   &kp N0         ___      ___
             >;
         };
 
@@ -127,17 +144,17 @@ ZMK_HOLD_TAP(hmr,
 //    ├───┼────────┼────────┼────────┼────────┼───┤       ├───┼────────┼───────┼────────┼────────┼───┤
 //    │   │   !    │   +    │   <    │   >    │ ~ │       │ ^ │   {    │   }   │   $    │   \    │   │
 //    ├───┼────────┼────────┼────────┼────────┼───┤       ├───┼────────┼───────┼────────┼────────┼───┤
-//    │   │ : 󰻀 : │ : ⎇ - │ : ⇧ * │ : ⌃ = │ & │       │ | │ : ⌃ ( │ : ⇧  │ : ⎇ _ │ : 󰻀 ; │ ' │
+//    │   │ : 󰻀 _ │ : ⎇ - │ : ⇧ * │ : ⌃ = │ & │       │ | │ : ⌃ ( │ : ⇧  │ : ⎇ ' │ : 󰻀 " │   │
 //    ├───┼────────┼────────┼────────┼────────┼───┼───┬───┼───┼────────┼───────┼────────┼────────┼───┤
-//    │   │   ?    │   `    │   [    │   ]    │ @ │   │   │ # │   %    │   ,   │   .    │   /    │ " │
+//    │   │   ?    │   @    │   [    │   ]    │   │   │   │   │   %    │   #   │   `    │   /    │   │
 //    └───┴────────┴────────┼────────┼────────┼───┼───┼───┼───┼────────┼───────┼────────┴────────┴───┘
 //                          │        │        │   │   │   │   │        │       │
 //                          └────────┴────────┴───┴───┴───┴───┴────────┴───────┘
-  ___   ___               ___               ___                   ___                 ___                         ___         ___                           ___                            ___                    ___                   ___
-  ___   &kp EXCLAMATION   &kp PLUS          &kp LESS_THAN         &kp GREATER_THAN    &kp TILDE                   &kp CARET   &kp LEFT_BRACE                &kp RIGHT_BRACE                &kp DOLLAR             &kp BACKSLASH         ___
-  ___   &hml LGUI COLON   &hml LALT MINUS   &hml LSHFT ASTERISK   &hml LCTRL EQUAL    &kp AMPERSAND               &kp PIPE    &hmr LCTRL LEFT_PARENTHESIS   &hmr RSHFT RIGHT_PARENTHESIS   &hmr LALT UNDERSCORE   &hmr LGUI SEMICOLON   &kp SINGLE_QUOTE
-  ___   &kp QUESTION      &kp GRAVE         &kp LEFT_BRACKET      &kp RIGHT_BRACKET   &kp AT          ___   ___   &kp HASH    &kp PERCENT                   &kp COMMA                      &kp DOT                &kp SLASH             &kp DOUBLE_QUOTES
-                                            ___                   ___                 ___             ___   ___   ___         ___                           ___
+  ___   ___                    ___               ___                   ___                 ___                         ___         ___                           ___                            ___                      ___                       ___
+  ___   &kp EXCLAMATION        &kp PLUS          &kp LESS_THAN         &kp GREATER_THAN    &kp TILDE                   &kp CARET   &kp LEFT_BRACE                &kp RIGHT_BRACE                &kp DOLLAR               &kp BACKSLASH             ___
+  ___   &hml LGUI UNDERSCORE   &hml LALT MINUS   &hml LSHFT ASTERISK   &hml LCTRL EQUAL    &kp AMPERSAND               &kp PIPE    &hmr LCTRL LEFT_PARENTHESIS   &hmr RSHFT RIGHT_PARENTHESIS   &hmr LALT SINGLE_QUOTE   &hmr LGUI DOUBLE_QUOTES   ___
+  ___   &kp QUESTION           &kp AT            &kp LEFT_BRACKET      &kp RIGHT_BRACKET   ___             ___   ___   ___         &kp PERCENT                   &kp HASH                       &kp GRAVE                &kp SLASH                 ___
+                                                 ___                   ___                 ___             ___   ___   ___         ___                           ___
             >;
         };
 
@@ -200,27 +217,6 @@ ZMK_HOLD_TAP(hmr,
   ___   &kp LGUI   &kp LALT   &kp LSHFT   &kp LCTRL   ___                    &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_UP   &mmv MOVE_RIGHT   ___   ___
   ___   ___        ___        ___         ___         ___   ___   ___        ___              ___              ___            ___               ___   ___
                               ___         ___         ___   ___   &mkp MB1   &mkp MB2         &mkp MB3         ___
-            >;
-        };
-
-        fn_layer {
-            bindings = <
-//    ┌───┬────┬─────┬─────┬─────┬───┐       ┌───┬───┬───┬───┬───┬───┐
-//    │   │    │     │     │     │   │       │   │   │   │   │   │   │
-//    ├───┼────┼─────┼─────┼─────┼───┤       ├───┼───┼───┼───┼───┼───┤
-//    │   │ F9 │ F10 │ F11 │ F12 │   │       │   │   │   │   │   │   │
-//    ├───┼────┼─────┼─────┼─────┼───┤       ├───┼───┼───┼───┼───┼───┤
-//    │   │ F5 │ F6  │ F7  │ F8  │   │       │   │ ⌃ │ ⇧ │ ⎇ │ 󰻀 │   │
-//    ├───┼────┼─────┼─────┼─────┼───┼───┬───┼───┼───┼───┼───┼───┼───┤
-//    │   │ F1 │ F2  │ F3  │ F4  │   │   │   │   │   │   │   │   │   │
-//    └───┴────┴─────┼─────┼─────┼───┼───┼───┼───┼───┼───┼───┴───┴───┘
-//                   │     │     │   │   │   │   │   │   │
-//                   └─────┴─────┴───┴───┴───┴───┴───┴───┘
-  ___   ___      ___       ___       ___       ___               ___   ___         ___         ___        ___        ___
-  ___   &kp F9   &kp F10   &kp F11   &kp F12   ___               ___   ___         ___         ___        ___        ___
-  ___   &kp F5   &kp F6    &kp F7    &kp F8    ___               ___   &kp LCTRL   &kp RSHFT   &kp LALT   &kp LGUI   ___
-  ___   &kp F1   &kp F2    &kp F3    &kp F4    ___   ___   ___   ___   ___         ___         ___        ___        ___
-                           ___       ___       ___   ___   ___   ___   ___         ___
             >;
         };
 
