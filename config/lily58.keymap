@@ -54,24 +54,6 @@ ZMK_HOLD_TAP(hmr,
     bindings = <&kp>, <&kp>;
 )
 
-
-/ {
-    behaviors {
-        comsemi: comma_semicolon {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp COMMA>, <&kp SEMI>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        dotcol: dot_colon {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp DOT>, <&kp COLON>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-    };
-};
-
 / {
     combos {
         compatible = "zmk,combos";
@@ -96,21 +78,21 @@ ZMK_HOLD_TAP(hmr,
 
         default_layer {
             bindings = <
-//    ┌───┬────────┬────────┬────────┬────────┬────────┐                    ┌───┬─────────────┬──────────┬─────────┬────────┬───┐
-//    │ 󱊷 │   1    │   2    │   3    │   4    │   5    │                    │ 6 │      7      │    8     │    9    │   0    │ ` │
-//    ├───┼────────┼────────┼────────┼────────┼────────┤                    ├───┼─────────────┼──────────┼─────────┼────────┼───┤
-//    │  │   Q    │   W    │   E    │   R    │   T    │                    │ Y │      U      │    I     │    O    │   P    │ - │
-//    ├───┼────────┼────────┼────────┼────────┼────────┤                    ├───┼─────────────┼──────────┼─────────┼────────┼───┤
-//    │ ⌃ │ : 󰻀 A │ : ⎇ S │ : ⇧ D │ : ⌃ F │   G    │                    │ H │   : ⌃ J    │  : ⇧ K  │ : ⎇ L  │ : 󰻀 ⌫ │ ' │
-//    ├───┼────────┼────────┼────────┼────────┼────────┼────────┬───────────┼───┼─────────────┼──────────┼─────────┼────────┼───┤
-//    │ ⇧ │   Z    │   X    │   C    │   V    │   B    │   [    │     ]     │ N │      M      │ &comsemi │ &dotcol │   /    │ ⇧ │
-//    └───┴────────┴────────┼────────┼────────┼────────┼────────┼───────────┼───┼─────────────┼──────────┼─────────┴────────┴───┘
-//                          │    󰕾   │   󰍽   │  NUM 󱊷 │  NAV ␣ │  SYMBOL ⏎ │ ⇧ │  UMlaltUT ⌦ │         │
-//                          └────────┴────────┴────────┴────────┴───────────┴───┴─────────────┴──────────┘
+//    ┌───┬────────┬────────┬────────┬────────┬────────┐                    ┌───┬─────────────┬────────┬────────┬────────┬───┐
+//    │ 󱊷 │   1    │   2    │   3    │   4    │   5    │                    │ 6 │      7      │   8    │   9    │   0    │ ` │
+//    ├───┼────────┼────────┼────────┼────────┼────────┤                    ├───┼─────────────┼────────┼────────┼────────┼───┤
+//    │  │   Q    │   W    │   E    │   R    │   T    │                    │ Y │      U      │   I    │   O    │   P    │ - │
+//    ├───┼────────┼────────┼────────┼────────┼────────┤                    ├───┼─────────────┼────────┼────────┼────────┼───┤
+//    │ ⌃ │ : 󰻀 A │ : ⎇ S │ : ⇧ D │ : ⌃ F │   G    │                    │ H │   : ⌃ J    │ : ⇧ K │ : ⎇ L │ : 󰻀 ⌫ │ ' │
+//    ├───┼────────┼────────┼────────┼────────┼────────┼────────┬───────────┼───┼─────────────┼────────┼────────┼────────┼───┤
+//    │ ⇧ │   Z    │   X    │   C    │   V    │   B    │   [    │     ]     │ N │      M      │   ,    │   .    │   /    │ ⇧ │
+//    └───┴────────┴────────┼────────┼────────┼────────┼────────┼───────────┼───┼─────────────┼────────┼────────┴────────┴───┘
+//                          │    󰕾   │   󰍽   │  NUM 󱊷 │  NAV ␣ │  SYMBOL ⏎ │ ⇧ │  UMlaltUT ⌦ │       │
+//                          └────────┴────────┴────────┴────────┴───────────┴───┴─────────────┴────────┘
   &kp ESC     &kp N1        &kp N2        &kp N3         &kp N4          &kp N5                                         &kp N6      &kp N7           &kp N8         &kp N9        &kp N0           &kp GRAVE
   &kp TAB     &kp Q         &kp W         &kp E          &kp R           &kp T                                          &kp Y       &kp U            &kp I          &kp O         &kp P            &kp MINUS
   &kp LCTRL   &hml LGUI A   &hml LALT S   &hml LSHFT D   &hml LCTRL F    &kp G                                          &kp H       &hmr LCTRL J     &hmr RSHFT K   &hmr LALT L   &hmr LGUI BSPC   &kp SQT
-  &kp LSHFT   &kp Z         &kp X         &kp C          &kp V           &kp B         &kp LBKT        &kp RBKT         &kp N       &kp M            &comsemi       &dotcol       &kp FSLH         &kp RSHFT
+  &kp LSHFT   &kp Z         &kp X         &kp C          &kp V           &kp B         &kp LBKT        &kp RBKT         &kp N       &kp M            &kp COMMA      &kp DOT       &kp FSLH         &kp RSHFT
                                           &mo MEDIA      &lt MOUSE TAB   &lt NUM ESC   &lt NAV SPACE   &lt SYMBOL RET   &kp LSHFT   &lt UMLAUT DEL   &mo SYS
             >;
         };
@@ -146,14 +128,14 @@ ZMK_HOLD_TAP(hmr,
 //    ├───┼────────┼────────┼────────┼────────┼───┤       ├───┼────────┼───────┼────────┼────────┼───┤
 //    │   │ : 󰻀 _ │ : ⎇ - │ : ⇧ * │ : ⌃ = │ & │       │ | │ : ⌃ ( │ : ⇧  │ : ⎇ ' │ : 󰻀 " │   │
 //    ├───┼────────┼────────┼────────┼────────┼───┼───┬───┼───┼────────┼───────┼────────┼────────┼───┤
-//    │   │   ?    │   @    │   [    │   ]    │   │   │   │   │   %    │   #   │   `    │   /    │   │
+//    │   │   ?    │   @    │   [    │   ]    │ % │   │   │ # │   '    │   "   │   `    │   /    │   │
 //    └───┴────────┴────────┼────────┼────────┼───┼───┼───┼───┼────────┼───────┼────────┴────────┴───┘
 //                          │        │        │   │   │   │   │        │       │
 //                          └────────┴────────┴───┴───┴───┴───┴────────┴───────┘
   ___   ___                    ___               ___                   ___                 ___                         ___         ___                           ___                            ___                      ___                       ___
   ___   &kp EXCLAMATION        &kp PLUS          &kp LESS_THAN         &kp GREATER_THAN    &kp TILDE                   &kp CARET   &kp LEFT_BRACE                &kp RIGHT_BRACE                &kp DOLLAR               &kp BACKSLASH             ___
   ___   &hml LGUI UNDERSCORE   &hml LALT MINUS   &hml LSHFT ASTERISK   &hml LCTRL EQUAL    &kp AMPERSAND               &kp PIPE    &hmr LCTRL LEFT_PARENTHESIS   &hmr RSHFT RIGHT_PARENTHESIS   &hmr LALT SINGLE_QUOTE   &hmr LGUI DOUBLE_QUOTES   ___
-  ___   &kp QUESTION           &kp AT            &kp LEFT_BRACKET      &kp RIGHT_BRACKET   ___             ___   ___   ___         &kp PERCENT                   &kp HASH                       &kp GRAVE                &kp SLASH                 ___
+  ___   &kp QUESTION           &kp AT            &kp LEFT_BRACKET      &kp RIGHT_BRACKET   &kp PERCENT     ___   ___   &kp HASH    &kp SINGLE_QUOTE              &kp DOUBLE_QUOTES              &kp GRAVE                &kp SLASH                 ___
                                                  ___                   ___                 ___             ___   ___   ___         ___                           ___
             >;
         };
