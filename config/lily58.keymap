@@ -126,16 +126,16 @@ ZMK_HOLD_TAP(hmr,
 //    ├───┼────────┼────────┼────────┼────────┼───┤       ├───┼────────┼───────┼────────┼────────┼───┤
 //    │   │   !    │   +    │   <    │   >    │ ~ │       │ ^ │   {    │   }   │   $    │   \    │   │
 //    ├───┼────────┼────────┼────────┼────────┼───┤       ├───┼────────┼───────┼────────┼────────┼───┤
-//    │   │ : 󰻀 _ │ : ⎇ - │ : ⇧ * │ : ⌃ = │ & │       │ | │ : ⌃ ( │ : ⇧  │ : ⎇ ' │ : 󰻀 " │   │
+//    │   │ : 󰻀 _ │ : ⎇ - │ : ⇧ * │ : ⌃ = │ & │       │ | │ : ⌃ ( │ : ⇧  │ : ⎇ ; │ : 󰻀 : │   │
 //    ├───┼────────┼────────┼────────┼────────┼───┼───┬───┼───┼────────┼───────┼────────┼────────┼───┤
 //    │   │   ?    │   @    │   [    │   ]    │ % │   │   │ # │   '    │   "   │   `    │   /    │   │
 //    └───┴────────┴────────┼────────┼────────┼───┼───┼───┼───┼────────┼───────┼────────┴────────┴───┘
 //                          │        │        │   │   │   │   │        │       │
 //                          └────────┴────────┴───┴───┴───┴───┴────────┴───────┘
-  ___   ___                    ___               ___                   ___                 ___                         ___         ___                           ___                            ___                      ___                       ___
-  ___   &kp EXCLAMATION        &kp PLUS          &kp LESS_THAN         &kp GREATER_THAN    &kp TILDE                   &kp CARET   &kp LEFT_BRACE                &kp RIGHT_BRACE                &kp DOLLAR               &kp BACKSLASH             ___
-  ___   &hml LGUI UNDERSCORE   &hml LALT MINUS   &hml LSHFT ASTERISK   &hml LCTRL EQUAL    &kp AMPERSAND               &kp PIPE    &hmr LCTRL LEFT_PARENTHESIS   &hmr RSHFT RIGHT_PARENTHESIS   &hmr LALT SINGLE_QUOTE   &hmr LGUI DOUBLE_QUOTES   ___
-  ___   &kp QUESTION           &kp AT            &kp LEFT_BRACKET      &kp RIGHT_BRACKET   &kp PERCENT     ___   ___   &kp HASH    &kp SINGLE_QUOTE              &kp DOUBLE_QUOTES              &kp GRAVE                &kp SLASH                 ___
+  ___   ___                    ___               ___                   ___                 ___                         ___         ___                           ___                            ___                   ___               ___
+  ___   &kp EXCLAMATION        &kp PLUS          &kp LESS_THAN         &kp GREATER_THAN    &kp TILDE                   &kp CARET   &kp LEFT_BRACE                &kp RIGHT_BRACE                &kp DOLLAR            &kp BACKSLASH     ___
+  ___   &hml LGUI UNDERSCORE   &hml LALT MINUS   &hml LSHFT ASTERISK   &hml LCTRL EQUAL    &kp AMPERSAND               &kp PIPE    &hmr LCTRL LEFT_PARENTHESIS   &hmr RSHFT RIGHT_PARENTHESIS   &hmr LALT SEMICOLON   &hmr LGUI COLON   ___
+  ___   &kp QUESTION           &kp AT            &kp LEFT_BRACKET      &kp RIGHT_BRACKET   &kp PERCENT     ___   ___   &kp HASH    &kp SINGLE_QUOTE              &kp DOUBLE_QUOTES              &kp GRAVE             &kp SLASH         ___
                                                  ___                   ___                 ___             ___   ___   ___         ___                           ___
             >;
         };
