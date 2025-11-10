@@ -34,6 +34,35 @@
 #define MEDIA 6
 #define SYS 7
 
+/ {
+    behaviors {
+        bspcdel: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>, <&kp DEL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+    };
+};
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        combo_capsword {
+            timeout-ms = <50>;
+            key-positions = <LH0 RH0>;
+            bindings = <&caps_word>;
+        };
+
+        combo_numword {
+            timeout-ms = <50>;
+            key-positions = <LH1 RH0>;
+            bindings = <&num_word NUM>;
+        };
+    };
+};
+
 ZMK_HOLD_TAP(hml,
     flavor = "balanced";
     tapping-term-ms = <280>;
@@ -54,23 +83,15 @@ ZMK_HOLD_TAP(hmr,
     bindings = <&kp>, <&kp>;
 )
 
-/ {
-    combos {
-        compatible = "zmk,combos";
-
-        combo_capsword {
-            timeout-ms = <50>;
-            key-positions = <LH0 RH0>;
-            bindings = <&caps_word>;
-        };
-
-        combo_numword {
-            timeout-ms = <50>;
-            key-positions = <LH1 RH0>;
-            bindings = <&num_word NUM>;
-        };
-    };
-};
+ZMK_HOLD_TAP(hmd,
+    flavor = "balanced";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <175>;
+    require-prior-idle-ms = <150>;
+    hold-trigger-key-positions = <KEYS_L THUMBS>;
+    hold-trigger-on-release;
+    bindings = <&kp>, <&bspcdel>;
+)
 
 / {
     keymap {
@@ -78,21 +99,21 @@ ZMK_HOLD_TAP(hmr,
 
         default_layer {
             bindings = <
-//    ┌───┬────────┬────────┬────────┬────────┬────────┐                    ┌───┬─────────────┬────────┬────────┬────────┬───┐
-//    │ 󱊷 │   1    │   2    │   3    │   4    │   5    │                    │ 6 │      7      │   8    │   9    │   0    │ ` │
-//    ├───┼────────┼────────┼────────┼────────┼────────┤                    ├───┼─────────────┼────────┼────────┼────────┼───┤
-//    │  │   Q    │   W    │   E    │   R    │   T    │                    │ Y │      U      │   I    │   O    │   P    │ - │
-//    ├───┼────────┼────────┼────────┼────────┼────────┤                    ├───┼─────────────┼────────┼────────┼────────┼───┤
-//    │ ⌃ │ : 󰻀 A │ : ⎇ S │ : ⇧ D │ : ⌃ F │   G    │                    │ H │   : ⌃ J    │ : ⇧ K │ : ⎇ L │ : 󰻀 ⌫ │ ' │
-//    ├───┼────────┼────────┼────────┼────────┼────────┼────────┬───────────┼───┼─────────────┼────────┼────────┼────────┼───┤
-//    │ ⇧ │   Z    │   X    │   C    │   V    │   B    │   [    │     ]     │ N │      M      │   ,    │   .    │   /    │ ⇧ │
-//    └───┴────────┴────────┼────────┼────────┼────────┼────────┼───────────┼───┼─────────────┼────────┼────────┴────────┴───┘
+//    ┌───┬────────┬────────┬────────┬────────┬────────┐                    ┌───┬─────────────┬────────┬────────┬──────────┬───┐
+//    │ 󱊷 │   1    │   2    │   3    │   4    │   5    │                    │ 6 │      7      │   8    │   9    │    0     │ ` │
+//    ├───┼────────┼────────┼────────┼────────┼────────┤                    ├───┼─────────────┼────────┼────────┼──────────┼───┤
+//    │  │   Q    │   W    │   E    │   R    │   T    │                    │ Y │      U      │   I    │   O    │    P     │ - │
+//    ├───┼────────┼────────┼────────┼────────┼────────┤                    ├───┼─────────────┼────────┼────────┼──────────┼───┤
+//    │ ⌃ │ : 󰻀 A │ : ⎇ S │ : ⇧ D │ : ⌃ F │   G    │                    │ H │   : ⌃ J    │ : ⇧ K │ : ⎇ L │ &hmd 󰻀 0 │ ' │
+//    ├───┼────────┼────────┼────────┼────────┼────────┼────────┬───────────┼───┼─────────────┼────────┼────────┼──────────┼───┤
+//    │ ⇧ │   Z    │   X    │   C    │   V    │   B    │   [    │     ]     │ N │      M      │   ,    │   .    │    /     │ ⇧ │
+//    └───┴────────┴────────┼────────┼────────┼────────┼────────┼───────────┼───┼─────────────┼────────┼────────┴──────────┴───┘
 //                          │    󰕾   │   󰍽   │  NUM 󱊷 │  NAV ␣ │  SYMBOL ⏎ │ ⇧ │  UMlaltUT ⌦ │       │
 //                          └────────┴────────┴────────┴────────┴───────────┴───┴─────────────┴────────┘
-  &kp ESC     &kp N1        &kp N2        &kp N3         &kp N4          &kp N5                                         &kp N6      &kp N7           &kp N8         &kp N9        &kp N0           &kp GRAVE
-  &kp TAB     &kp Q         &kp W         &kp E          &kp R           &kp T                                          &kp Y       &kp U            &kp I          &kp O         &kp P            &kp MINUS
-  &kp LCTRL   &hml LGUI A   &hml LALT S   &hml LSHFT D   &hml LCTRL F    &kp G                                          &kp H       &hmr LCTRL J     &hmr RSHFT K   &hmr LALT L   &hmr LGUI BSPC   &kp SQT
-  &kp LSHFT   &kp Z         &kp X         &kp C          &kp V           &kp B         &kp LBKT        &kp RBKT         &kp N       &kp M            &kp COMMA      &kp DOT       &kp FSLH         &kp RSHFT
+  &kp ESC     &kp N1        &kp N2        &kp N3         &kp N4          &kp N5                                         &kp N6      &kp N7           &kp N8         &kp N9        &kp N0        &kp GRAVE
+  &kp TAB     &kp Q         &kp W         &kp E          &kp R           &kp T                                          &kp Y       &kp U            &kp I          &kp O         &kp P         &kp MINUS
+  &kp LCTRL   &hml LGUI A   &hml LALT S   &hml LSHFT D   &hml LCTRL F    &kp G                                          &kp H       &hmr LCTRL J     &hmr RSHFT K   &hmr LALT L   &hmd LGUI 0   &kp SQT
+  &kp LSHFT   &kp Z         &kp X         &kp C          &kp V           &kp B         &kp LBKT        &kp RBKT         &kp N       &kp M            &kp COMMA      &kp DOT       &kp FSLH      &kp RSHFT
                                           &mo MEDIA      &lt MOUSE TAB   &lt NUM ESC   &lt NAV SPACE   &lt SYMBOL RET   &kp LSHFT   &lt UMLAUT DEL   &mo SYS
             >;
         };
