@@ -78,6 +78,30 @@
             bindings = <&num_word NUM>;
         };
 
+        combo_parenthesis_open {
+            timeout-ms = <20>;
+            key-positions = <RM1 RM2>;
+            bindings = <&kp LEFT_PARENTHESIS>;
+        };
+
+        combo_parenthesis_close {
+            timeout-ms = <20>;
+            key-positions = <RM2 RM3>;
+            bindings = <&kp RIGHT_PARENTHESIS>;
+        };
+
+        combo_brace_open {
+            timeout-ms = <20>;
+            key-positions = <RT1 RT2>;
+            bindings = <&kp LEFT_BRACE>;
+        };
+
+        combo_brace_close {
+            timeout-ms = <20>;
+            key-positions = <RT2 RT3>;
+            bindings = <&kp RIGHT_BRACE>;
+        };
+
         combo_quote {
             timeout-ms = <20>;
             key-positions = <RM1 RB1>;
@@ -100,6 +124,30 @@
             timeout-ms = <20>;
             key-positions = <RM4 RB4>;
             bindings = <&kp COLON>;
+        };
+
+        combo_bracket_open {
+            timeout-ms = <20>;
+            key-positions = <LM2 LM3>;
+            bindings = <&kp LEFT_BRACKET>;
+        };
+
+        combo_bracket_close {
+            timeout-ms = <20>;
+            key-positions = <LM1 LM2>;
+            bindings = <&kp RIGHT_BRACKET>;
+        };
+
+        combo_less_than {
+            timeout-ms = <20>;
+            key-positions = <LT2 LT3>;
+            bindings = <&kp LESS_THAN>;
+        };
+
+        combo_greater_than {
+            timeout-ms = <20>;
+            key-positions = <LT1 LT2>;
+            bindings = <&kp GREATER_THAN>;
         };
 
         combo_minus {
