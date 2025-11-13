@@ -77,6 +77,60 @@
             key-positions = <LH1 RH0>;
             bindings = <&num_word NUM>;
         };
+
+        combo_quote {
+            timeout-ms = <20>;
+            key-positions = <RM1 RB1>;
+            bindings = <&kp SINGLE_QUOTE>;
+        };
+
+        combo_double_quote {
+            timeout-ms = <20>;
+            key-positions = <RM2 RB2>;
+            bindings = <&kp DOUBLE_QUOTES>;
+        };
+
+        combo_semicolon {
+            timeout-ms = <20>;
+            key-positions = <RM3 RB3>;
+            bindings = <&kp SEMICOLON>;
+        };
+
+        combo_colon {
+            timeout-ms = <20>;
+            key-positions = <RM4 RB4>;
+            bindings = <&kp COLON>;
+        };
+
+        combo_minus {
+            timeout-ms = <20>;
+            key-positions = <LM3 LB3>;
+            bindings = <&kp MINUS>;
+        };
+
+        combo_asterisk {
+            timeout-ms = <20>;
+            key-positions = <LM2 LB2>;
+            bindings = <&kp ASTERISK>;
+        };
+
+        combo_equal {
+            timeout-ms = <20>;
+            key-positions = <LM1 LB1>;
+            bindings = <&kp EQUAL>;
+        };
+
+        combo_underscore {
+            timeout-ms = <20>;
+            key-positions = <LM4 LB4>;
+            bindings = <&kp UNDERSCORE>;
+        };
+
+        combo_tab {
+            timeout-ms = <20>;
+            key-positions = <LM4 LM3>;
+            bindings = <&kp TAB>;
+        };
     };
 };
 
