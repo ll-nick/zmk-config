@@ -102,6 +102,48 @@
             bindings = <&kp RIGHT_BRACE>;
         };
 
+        combo_ampersand {
+            timeout-ms = <20>;
+            key-positions = <RB1 RB2>;
+            bindings = <&kp AMPERSAND>;
+        };
+
+        combo_pipe {
+            timeout-ms = <20>;
+            key-positions = <RB2 RB3>;
+            bindings = <&kp PIPE>;
+        };
+
+        combo_caret {
+            timeout-ms = <20>;
+            key-positions = <RT0 RM0>;
+            bindings = <&kp CARET>;
+        };
+
+        combo_semicolon {
+            timeout-ms = <20>;
+            key-positions = <RT1 RM1>;
+            bindings = <&kp SEMICOLON>;
+        };
+
+        combo_colon {
+            timeout-ms = <20>;
+            key-positions = <RT2 RM2>;
+            bindings = <&kp COLON>;
+        };
+
+        combo_dollar {
+            timeout-ms = <20>;
+            key-positions = <RT3 RM3>;
+            bindings = <&kp DOLLAR>;
+        };
+
+        combo_asterisk {
+            timeout-ms = <20>;
+            key-positions = <RM0 RB0>;
+            bindings = <&kp ASTERISK>;
+        };
+
         combo_quote {
             timeout-ms = <20>;
             key-positions = <RM1 RB1>;
@@ -114,16 +156,16 @@
             bindings = <&kp DOUBLE_QUOTES>;
         };
 
-        combo_semicolon {
+        combo_grave {
             timeout-ms = <20>;
             key-positions = <RM3 RB3>;
-            bindings = <&kp SEMICOLON>;
+            bindings = <&kp GRAVE>;
         };
 
-        combo_colon {
+        combo_backslash {
             timeout-ms = <20>;
             key-positions = <RM4 RB4>;
-            bindings = <&kp COLON>;
+            bindings = <&kp BACKSLASH>;
         };
 
         combo_bracket_open {
@@ -150,34 +192,70 @@
             bindings = <&kp GREATER_THAN>;
         };
 
-        combo_minus {
-            timeout-ms = <20>;
-            key-positions = <LM3 LB3>;
-            bindings = <&kp MINUS>;
-        };
-
-        combo_asterisk {
-            timeout-ms = <20>;
-            key-positions = <LM2 LB2>;
-            bindings = <&kp ASTERISK>;
-        };
-
-        combo_equal {
-            timeout-ms = <20>;
-            key-positions = <LM1 LB1>;
-            bindings = <&kp EQUAL>;
-        };
-
-        combo_underscore {
-            timeout-ms = <20>;
-            key-positions = <LM4 LB4>;
-            bindings = <&kp UNDERSCORE>;
-        };
-
         combo_tab {
             timeout-ms = <20>;
             key-positions = <LM4 LM3>;
             bindings = <&kp TAB>;
+        };
+
+        combo_percent {
+            timeout-ms = <20>;
+            key-positions = <LT0 LM0>;
+            bindings = <&kp PERCENT>;
+        };
+
+        combo_equal {
+            timeout-ms = <20>;
+            key-positions = <LT1 LM1>;
+            bindings = <&kp EQUAL>;
+        };
+
+        combo_hash {
+            timeout-ms = <20>;
+            key-positions = <LT2 LM2>;
+            bindings = <&kp HASH>;
+        };
+
+        combo_at {
+            timeout-ms = <20>;
+            key-positions = <LT3 LM3>;
+            bindings = <&kp AT>;
+        };
+
+        combo_exclamation {
+            timeout-ms = <20>;
+            key-positions = <LT4 LM4>;
+            bindings = <&kp EXCLAMATION>;
+        };
+
+        combo_tilde {
+            timeout-ms = <20>;
+            key-positions = <LM0 LB0>;
+            bindings = <&kp TILDE>;
+        };
+
+        combo_underscore {
+            timeout-ms = <20>;
+            key-positions = <LM1 LB1>;
+            bindings = <&kp UNDERSCORE>;
+        };
+
+        combo_minus {
+            timeout-ms = <20>;
+            key-positions = <LM2 LB2>;
+            bindings = <&kp MINUS>;
+        };
+    
+        combo_plus {
+            timeout-ms = <20>;
+            key-positions = <LM3 LB3>;
+            bindings = <&kp PLUS>;
+        };
+
+        combo_question {
+            timeout-ms = <20>;
+            key-positions = <LM4 LB4>;
+            bindings = <&kp QUESTION>;
         };
     };
 };
