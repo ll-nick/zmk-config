@@ -104,6 +104,7 @@ return {
           ["LG("] = "🐧 + ",
           ["LA("] = "⎇ + ",
           ["LS("] = "⇧ + ",
+          ["LC("] = "⌃ + ",
           [")"] = "", -- This breaks the parentheses on the symbol layer but simplifies the shortcuts by a lot
         },
       },
