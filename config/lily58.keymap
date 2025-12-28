@@ -40,7 +40,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp BSPC>, <&kp DEL>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            mods = <(MOD_LALT|MOD_RALT)>;
         };
         lt: layer_tap {
             compatible = "zmk,behavior-hold-tap";
