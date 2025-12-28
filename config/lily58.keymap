@@ -162,19 +162,19 @@ ZMK_HOLD_TAP(hmd,
 //    ┌───┬────────┬────────┬────────┬────────┬───┐       ┌───┬────────┬───────┬────────┬────────┬───┐
 //    │   │        │        │        │        │   │       │   │        │       │        │        │   │
 //    ├───┼────────┼────────┼────────┼────────┼───┤       ├───┼────────┼───────┼────────┼────────┼───┤
-//    │   │   !    │   +    │   <    │   >    │ ~ │       │ ^ │   {    │   }   │   $    │   \    │   │
+//    │   │   !    │   +    │   <    │   >    │   │       │ ^ │   {    │   }   │   $    │   \    │   │
 //    ├───┼────────┼────────┼────────┼────────┼───┤       ├───┼────────┼───────┼────────┼────────┼───┤
-//    │   │ : 󰻀 _ │ : ⎇ - │ : ⇧ [ │ : ⌃ ] │ & │       │ | │ : ⌃ ( │ : ⇧  │ : ⎇ ; │ : 󰻀 : │   │
+//    │   │ : 󰻀 _ │ : ⎇ - │ : ⇧ [ │ : ⌃ ] │ = │       │ | │ : ⌃ ( │ : ⇧  │ : ⎇ ; │ : 󰻀 : │   │
 //    ├───┼────────┼────────┼────────┼────────┼───┼───┬───┼───┼────────┼───────┼────────┼────────┼───┤
-//    │   │   ?    │   @    │   *    │   =    │ % │   │   │ # │   '    │   "   │   `    │   /    │   │
+//    │   │   @    │   *    │   #    │   %    │ ~ │   │   │ & │   '    │   "   │   `    │   /    │   │
 //    └───┴────────┴────────┼────────┼────────┼───┼───┼───┼───┼────────┼───────┼────────┴────────┴───┘
 //                          │        │        │   │   │   │   │        │       │
 //                          └────────┴────────┴───┴───┴───┴───┴────────┴───────┘
-  ___   ___                    ___               ___                       ___                        ___                         ___         ___                           ___                            ___                   ___               ___
-  ___   &kp EXCLAMATION        &kp PLUS          &kp LESS_THAN             &kp GREATER_THAN           &kp TILDE                   &kp CARET   &kp LEFT_BRACE                &kp RIGHT_BRACE                &kp DOLLAR            &kp BACKSLASH     ___
-  ___   &hml LGUI UNDERSCORE   &hml LALT MINUS   &hml LSHFT LEFT_BRACKET   &hml LCTRL RIGHT_BRACKET   &kp AMPERSAND               &kp PIPE    &hmr LCTRL LEFT_PARENTHESIS   &hmr RSHFT RIGHT_PARENTHESIS   &hmr LALT SEMICOLON   &hmr LGUI COLON   ___
-  ___   &kp QUESTION           &kp AT            &kp ASTERISK              &kp EQUAL                  &kp PERCENT     ___   ___   &kp HASH    &kp SINGLE_QUOTE              &kp DOUBLE_QUOTES              &kp GRAVE             &kp SLASH         ___
-                                                 ___                       ___                        ___             ___   ___   ___         ___                           ___
+  ___   ___                    ___               ___                       ___                        ___                     ___             ___                           ___                            ___                   ___               ___
+  ___   &kp EXCLAMATION        &kp PLUS          &kp LESS_THAN             &kp GREATER_THAN           ___                     &kp CARET       &kp LEFT_BRACE                &kp RIGHT_BRACE                &kp DOLLAR            &kp BACKSLASH     ___
+  ___   &hml LGUI UNDERSCORE   &hml LALT MINUS   &hml LSHFT LEFT_BRACKET   &hml LCTRL RIGHT_BRACKET   &kp EQUAL               &kp PIPE        &hmr LCTRL LEFT_PARENTHESIS   &hmr RSHFT RIGHT_PARENTHESIS   &hmr LALT SEMICOLON   &hmr LGUI COLON   ___
+  ___   &kp AT                 &kp ASTERISK      &kp HASH                  &kp PERCENT                &kp TILDE   ___   ___   &kp AMPERSAND   &kp SINGLE_QUOTE              &kp DOUBLE_QUOTES              &kp GRAVE             &kp SLASH         ___
+                                                 ___                       ___                        ___         ___   ___   ___             ___                           ___
             >;
         };
 
