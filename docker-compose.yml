@@ -1,0 +1,32 @@
+services:
+  west-update:
+    build: .
+    volumes:
+      - ./.docker-west:/workspace
+      - .:/zmk-config
+    working_dir: /workspace
+    command: west update --fetch-opt=--filter=tree:0
+
+  lily58-left:
+    build: .
+    volumes:
+      - ./.docker-west:/workspace
+      - .:/zmk-config
+    working_dir: /workspace
+    command: >
+      bash -c "west build -s zmk/app -d /workspace/.build/lily58-left -b nice_nano --
+      -DZMK_CONFIG=/zmk-config/config -DSHIELD=lily58_left &&
+      mkdir -p /zmk-config/firmware &&
+      cp /workspace/.build/lily58-left/zephyr/zmk.uf2 /zmk-config/firmware/lily58-left.uf2"
+
+  lily58-right:
+    build: .
+    volumes:
+      - ./.docker-west:/workspace
+      - .:/zmk-config
+    working_dir: /workspace
+    command: >
+      bash -c "west build -s zmk/app -d /workspace/.build/lily58-right -b nice_nano --
+      -DZMK_CONFIG=/zmk-config/config -DSHIELD=lily58_right &&
+      mkdir -p /zmk-config/firmware &&
+      cp /workspace/.build/lily58-right/zephyr/zmk.uf2 /zmk-config/firmware/lily58-right.uf2"
