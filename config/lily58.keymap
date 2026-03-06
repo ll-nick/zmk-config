@@ -12,6 +12,7 @@
 #include "zmk-helpers/key-labels/lily58.h"
 
 #define ___ &trans
+#define XXX &none
 
 #define KEYS_L LN0 LN1 LN2 LN3 LN4 LN5 \
               LT0 LT1 LT2 LT3 LT4 LT5 \
@@ -127,10 +128,10 @@ ZMK_HOLD_TAP(hmd,
 //    └───┴────────┴───────────┼────────────┼─────────────────┼────────┼────────┼───────────┼───┼─────────────┼────────┼────────┴──────────┴───┘
 //                             │      󰕾     │       󰍽        │  NUM 󱊷 │  NAV ␣ │  SYMBOL ⏎ │ ⇧ │  UMlaltUT ⌦ │       │
 //                             └────────────┴─────────────────┴────────┴────────┴───────────┴───┴─────────────┴────────┘
-  &kp ESC     &kp N1        &kp N2        &kp N3         &kp N4            &kp N5                                         &kp N6      &kp N7           &kp N8         &kp N9        &kp N0        &kp GRAVE
-  &kp TAB     &kp Q         &kp W         &kp E          &kp R             &kp T                                          &kp Y       &kp U            &kp I          &kp O         &kp P         &kp MINUS
-  &kp LCTRL   &hml LGUI A   &hml LALT S   &hml LSHFT D   &hml LCTRL F      &kp G                                          &kp H       &hmr LCTRL J     &hmr RSHFT K   &hmr LALT L   &hmd LGUI 0   &kp SQT
-  &kp LSHFT   &kp Z         &ht K_CUT X   &ht K_COPY C   &ht LC(LS(V)) V   &kp B         &kp LBKT        &kp RBKT         &kp N       &kp M            &kp COMMA      &kp DOT       &kp FSLH      &kp RSHFT
+  XXX         XXX           XXX           XXX            XXX               XXX                                            XXX         XXX              XXX            XXX           XXX           XXX
+  XXX         &kp Q         &kp W         &kp E          &kp R             &kp T                                          &kp Y       &kp U            &kp I          &kp O         &kp P         XXX
+  XXX         &hml LGUI A   &hml LALT S   &hml LSHFT D   &hml LCTRL F      &kp G                                          &kp H       &hmr LCTRL J     &hmr RSHFT K   &hmr LALT L   &hmd LGUI 0   XXX
+  XXX         &kp Z         &ht K_CUT X   &ht K_COPY C   &ht LC(LS(V)) V   &kp B         &kp LBKT        &kp RBKT         &kp N       &kp M            &kp COMMA      &kp DOT       &kp FSLH      XXX
                                           &mo MEDIA      &lt MOUSE TAB     &lt NUM ESC   &lt NAV SPACE   &lt SYMBOL RET   &kp LSHFT   &lt UMLAUT DEL   &mo SYS
             >;
         };
@@ -275,8 +276,8 @@ ZMK_HOLD_TAP(hmd,
 //    └───┴───────┴────┼────┼──────┼────┼───┼───┼───┼──────┼───┼───┴───────┴───┘
 //                     │    │      │    │   │   │   │      │   │
 //                     └────┴──────┴────┴───┴───┴───┴──────┴───┘
-  &bt BT_CLR   &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4               ___   ___            ___   ___   ___          ___
-  ___          ___            ___            ___            ___            ___                        ___   &out OUT_USB   ___   ___   ___          ___
+  ___          ___            ___            ___            ___            ___                        ___   ___            ___   ___   ___          ___
+  ___          &bt BT_CLR     &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3               ___   &out OUT_USB   ___   ___   ___          ___
   ___          &sys_reset     ___            ___            &bootloader    ___                        ___   &bootloader    ___   ___   &sys_reset   ___
   ___          ___            ___            ___            ___            &out OUT_BLE   ___   ___   ___   ___            ___   ___   ___          ___
                                              ___            ___            ___            ___   ___   ___   ___            ___
