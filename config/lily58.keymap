@@ -224,7 +224,7 @@ ZMK_HOLD_TAP(hmd,
   ___   ___              ___              ___              ___              ___               ___                 ___             ___             ___                 ___   ___
   ___   ___              ___              ___              ___              ___               &kp HOME            &kp PGDN        &kp PGUP        &kp END             ___   ___
   ___   &kp LGUI         &kp LALT         &kp LSHFT        &kp LCTRL        ___               &kp LEFT            &kp DOWN        &kp UP          &kp RIGHT           ___   ___
-  ___   &kp LG(LA(N1))   &kp LG(LA(N2))   &kp LG(LA(N3))   &kp LG(LA(N4))   ___   ___   ___   &kp LG(LA(LS(J)))   &kp LG(LA(J))   &kp LG(LA(K))   &kp LG(LA(LS(K)))   ___   ___
+  ___   ___   ___   ___   ___   ___   ___   ___   ___   ___   ___   ___   ___   ___
                                           ___              ___              ___   ___   ___   ___                 ___             ___
             >;
         };
