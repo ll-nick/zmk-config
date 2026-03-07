@@ -66,12 +66,6 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_capsword {
-            timeout-ms = <50>;
-            key-positions = <LH0 RH0>;
-            bindings = <&caps_word>;
-        };
-
         combo_numword {
             timeout-ms = <50>;
             key-positions = <LH1 RH0>;
