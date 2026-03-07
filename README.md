@@ -28,3 +28,11 @@ The west workspace is cached in `.docker-west/` and persists between runs. Delet
 ## Building via GitHub Actions
 
 Push to `main` to trigger a build. Firmware artifacts are available in the Actions tab.
+
+## Acknowledgements
+
+Large parts of this config are based on urob's [amazing ZMK config](https://github.com/urob/zmk-config),
+which is also the source of several modules used here:
+[zmk-helpers](https://github.com/urob/zmk-helpers),
+[zmk-auto-layer](https://github.com/urob/zmk-auto-layer), and
+[zmk-adaptive-key](https://github.com/urob/zmk-adaptive-key).
