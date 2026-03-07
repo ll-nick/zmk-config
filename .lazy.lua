@@ -36,14 +36,6 @@ return {
           DEL = "⌦",
           ___ = " ",
 
-          -- Umlaut Layer
-          ["RA(E)"] = "Ë",
-          ["RA(A)"] = "Ä",
-          ["RA(S)"] = "ß",
-          ["RA(U)"] = "Ü",
-          ["RA(O)"] = "Ö",
-          ["RA(N5)"] = "€",
-
           -- 🐭 Mouse Layer
           MOUSE = "󰍽",
           ["&mmv MOVE_LEFT"] = "󰍽 󰁍",
@@ -109,7 +101,6 @@ return {
         },
       },
       layout = {
-        -- left half
         "x x x x x x _ _ x x x x x x",
         "x x x x x x _ _ x x x x x x",
         "x x x x x x _ _ x x x x x x",
