@@ -30,3 +30,27 @@ services:
       -DZMK_CONFIG=/zmk-config/config -DSHIELD=lily58_right &&
       mkdir -p /zmk-config/firmware &&
       cp /workspace/.build/lily58-right/zephyr/zmk.uf2 /zmk-config/firmware/lily58-right.uf2"
+
+  corne-left:
+    build: .
+    volumes:
+      - ./.docker-west:/workspace
+      - .:/zmk-config
+    working_dir: /workspace
+    command: >
+      bash -c "west build -s zmk/app -d /workspace/.build/corne-left -b nice_nano_v2 --
+      -DZMK_CONFIG=/zmk-config/config -DSHIELD=corne_left &&
+      mkdir -p /zmk-config/firmware &&
+      cp /workspace/.build/corne-left/zephyr/zmk.uf2 /zmk-config/firmware/corne-left.uf2"
+
+  corne-right:
+    build: .
+    volumes:
+      - ./.docker-west:/workspace
+      - .:/zmk-config
+    working_dir: /workspace
+    command: >
+      bash -c "west build -s zmk/app -d /workspace/.build/corne-right -b nice_nano_v2 --
+      -DZMK_CONFIG=/zmk-config/config -DSHIELD=corne_right &&
+      mkdir -p /zmk-config/firmware &&
+      cp /workspace/.build/corne-right/zephyr/zmk.uf2 /zmk-config/firmware/corne-right.uf2"
