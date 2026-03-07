@@ -92,6 +92,7 @@ return {
           ["&hmr"] = ":",
           ["&lt"] = "",
           ["&mo"] = "",
+          ["&magic_shift LSHFT 0"] = "⇧",
 
           -- Modifiers
           ["LG("] = "🐧 + ",
