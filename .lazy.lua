@@ -34,15 +34,8 @@ return {
           RET = "⏎",
           SPACE = "␣",
           DEL = "⌦",
-          ___ = " ",
-
-          -- Umlaut Layer
-          ["RA(E)"] = "Ë",
-          ["RA(A)"] = "Ä",
-          ["RA(S)"] = "ß",
-          ["RA(U)"] = "Ü",
-          ["RA(O)"] = "Ö",
-          ["RA(N5)"] = "€",
+          ___ = " ", -- transparent keys
+          _XXX = " ", -- disabled keys
 
           -- 🐭 Mouse Layer
           MOUSE = "󰍽",
@@ -82,7 +75,6 @@ return {
           ["&kp C_VOLUME_DOWN"] = "󰕿",
 
           -- 🖥️ System Layer
-          SYS = "",
           ["&sys_reset"] = "RESET",
           ["&bootloader"] = "BOOT",
           ["&bt BT_CLR"] = "󰂭",
@@ -99,6 +91,7 @@ return {
           ["&hmr"] = ":",
           ["&lt"] = "",
           ["&mo"] = "",
+          ["&magic_shift LSHFT 0"] = "⇧",
 
           -- Modifiers
           ["LG("] = "🐧 + ",
@@ -109,7 +102,6 @@ return {
         },
       },
       layout = {
-        -- left half
         "x x x x x x _ _ x x x x x x",
         "x x x x x x _ _ x x x x x x",
         "x x x x x x _ _ x x x x x x",
