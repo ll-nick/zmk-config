@@ -34,7 +34,8 @@ return {
           RET = "⏎",
           SPACE = "␣",
           DEL = "⌦",
-          ___ = " ",
+          ___ = " ", -- transparent keys
+          _XXX = " ", -- disabled keys
 
           -- 🐭 Mouse Layer
           MOUSE = "󰍽",
