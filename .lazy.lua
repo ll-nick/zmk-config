@@ -75,7 +75,6 @@ return {
           ["&kp C_VOLUME_DOWN"] = "󰕿",
 
           -- 🖥️ System Layer
-          SYS = "",
           ["&sys_reset"] = "RESET",
           ["&bootloader"] = "BOOT",
           ["&bt BT_CLR"] = "󰂭",
