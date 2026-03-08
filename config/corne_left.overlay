@@ -1,0 +1,6 @@
+// Corne Mini (5-column): select the 5-column matrix transform.
+/ {
+    chosen {
+        zmk,matrix-transform = &five_column_transform;
+    };
+};
