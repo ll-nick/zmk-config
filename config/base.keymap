@@ -10,7 +10,9 @@
 #include "zmk-helpers/helper.h"
 
 #define ___ &trans
-#define _XXX &none
+#define XXX &none
+
+#define PASTE LC(LS(V))
 #define CANCEL &kp K_CANCEL // Cancel caps-word & auto-layers.
 
 #define BASE 0
@@ -26,8 +28,6 @@
 #  define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH) \
        ZMK_LAYER(name, LT RT LM RM LB RB LH RH)
 #endif
-
-#define PASTE LC(LS(V))
 
 / {
     behaviors {

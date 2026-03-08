@@ -6,13 +6,16 @@
 #define LILY58_STANDARD_LABELS 1
 #include "zmk-helpers/key-labels/lily58.h"
 
-#define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH)         \
-    ZMK_LAYER(name,                                                    \
-        _XXX _XXX _XXX _XXX _XXX _XXX _XXX _XXX _XXX _XXX _XXX _XXX   \
-        _XXX LT RT _XXX                                                \
-        _XXX LM RM _XXX                                                \
-        _XXX LB &kp _XXX &kp _XXX RB _XXX                             \
-             _XXX LH RH _XXX                                           \
+#define NUM_ROW XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX
+#define ENCODERS XXX XXX
+
+#define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH) \
+    ZMK_LAYER(name,                                          \
+        NUM_ROW                                              \
+        XXX LT          RT  XXX                              \
+        XXX LM          RM  XXX                              \
+        XXX LB ENCODERS RB  XXX                              \
+        XXX LH          RH  XXX                              \
     )
 
 #include "base.keymap"
