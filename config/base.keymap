@@ -6,8 +6,16 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #include <behaviors/num_word.dtsi>
+#include <behaviors/unicode.dtsi>
+
+#include <zmk-unicode/keys/german.h>
+#include <zmk-unicode/keys/currency.h>
 
 #include "zmk-helpers/helper.h"
+
+&uc {
+    default-mode = <UC_MODE_LINUX>;
+};
 
 #define ___ &trans
 #define XXX &none
@@ -70,31 +78,31 @@
         combo_ae {
             timeout-ms = <50>;
             key-positions = <LT4 LM4>;
-            bindings = <&kp RA(A)>;
+            bindings = <&uc UC_DE_AE>;
         };
 
         combo_ss {
             timeout-ms = <50>;
             key-positions = <LT3 LM3>;
-            bindings = <&kp RA(S)>;
+            bindings = <&uc UC_DE_SS>;
         };
 
         combo_eur {
             timeout-ms = <50>;
             key-positions = <LT2 LM2>;
-            bindings = <&kp RA(N5)>;
+            bindings = <&uc UC_CURR_EURO>;
         };
 
         combo_ue {
             timeout-ms = <50>;
             key-positions = <RT1 RM1>;
-            bindings = <&kp RA(U)>;
+            bindings = <&uc UC_DE_UE>;
         };
 
         combo_oe {
             timeout-ms = <50>;
             key-positions = <RT3 RM3>;
-            bindings = <&kp RA(O)>;
+            bindings = <&uc UC_DE_OE>;
         };
     };
 };
