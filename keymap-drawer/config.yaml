@@ -1,0 +1,39 @@
+draw_config:
+  n_columns: 2
+  dark_mode: true
+
+parse_config:
+  zmk_additional_includes:
+    - /west/zmk-helpers/include
+    - /west/zmk-auto-layer/dts
+    - /west/zmk-adaptive-key/include
+
+  raw_binding_map:
+    # Mouse movement
+    '&mmv MOVE_LEFT':  {t: "←", h: Move}
+    '&mmv MOVE_RIGHT': {t: "→", h: Move}
+    '&mmv MOVE_UP':    {t: "↑", h: Move}
+    '&mmv MOVE_DOWN':  {t: "↓", h: Move}
+    # Scroll
+    '&msc SCRL_LEFT':  {t: "←", h: Scroll}
+    '&msc SCRL_RIGHT': {t: "→", h: Scroll}
+    '&msc SCRL_UP':    {t: "↑", h: Scroll}
+    '&msc SCRL_DOWN':  {t: "↓", h: Scroll}
+    # Mouse buttons
+    '&mkp MB1': LClick
+    '&mkp MB2': RClick
+    '&mkp MB3': MClick
+    # System
+    '&sys_reset':  Reset
+    '&bootloader': Boot
+    # Custom behaviors / macros
+    '&dot_spc':             ". ⇧"
+    '&num_word 1':          Num Word
+    '&magic_shift LSHFT 0': {t: Magic, h: Shift, s: Caps}
+    '&ht LC(LS(V)) V': {t: V, h: Paste}
+    # Umlaut layer
+    '&kp RA(A)':  "ä"
+    '&kp RA(S)':  "ß"
+    '&kp RA(N5)': "€"
+    '&kp RA(U)':  "ü"
+    '&kp RA(O)':  "ö"

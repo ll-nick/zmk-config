@@ -2,3 +2,5 @@
 .zmk/
 .docker-west/
 firmware/
+keymap-drawer/*.yaml
+!keymap-drawer/config.yaml
