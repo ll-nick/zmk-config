@@ -15,7 +15,7 @@ services:
     working_dir: /workspace
     command: >
       bash -c "west build -s zmk/app -d /workspace/.build/lily58-left -b nice_nano --
-      -DZMK_CONFIG=/zmk-config/config -DSHIELD=lily58_left &&
+      -DZMK_CONFIG=/zmk-config/config -DSHIELD=lily58_left -DZephyr_DIR=/workspace/zephyr/share/zephyr-package/cmake &&
       mkdir -p /zmk-config/firmware &&
       cp /workspace/.build/lily58-left/zephyr/zmk.uf2 /zmk-config/firmware/lily58-left.uf2"
 
@@ -27,6 +27,30 @@ services:
     working_dir: /workspace
     command: >
       bash -c "west build -s zmk/app -d /workspace/.build/lily58-right -b nice_nano --
-      -DZMK_CONFIG=/zmk-config/config -DSHIELD=lily58_right &&
+      -DZMK_CONFIG=/zmk-config/config -DSHIELD=lily58_right -DZephyr_DIR=/workspace/zephyr/share/zephyr-package/cmake &&
       mkdir -p /zmk-config/firmware &&
       cp /workspace/.build/lily58-right/zephyr/zmk.uf2 /zmk-config/firmware/lily58-right.uf2"
+
+  corne-left:
+    build: .
+    volumes:
+      - ./.docker-west:/workspace
+      - .:/zmk-config
+    working_dir: /workspace
+    command: >
+      bash -c "west build -s zmk/app -d /workspace/.build/corne-left -b nice_nano_v2 --
+      -DZMK_CONFIG=/zmk-config/config -DSHIELD=corne_left -DZephyr_DIR=/workspace/zephyr/share/zephyr-package/cmake &&
+      mkdir -p /zmk-config/firmware &&
+      cp /workspace/.build/corne-left/zephyr/zmk.uf2 /zmk-config/firmware/corne-left.uf2"
+
+  corne-right:
+    build: .
+    volumes:
+      - ./.docker-west:/workspace
+      - .:/zmk-config
+    working_dir: /workspace
+    command: >
+      bash -c "west build -s zmk/app -d /workspace/.build/corne-right -b nice_nano_v2 --
+      -DZMK_CONFIG=/zmk-config/config -DSHIELD=corne_right -DZephyr_DIR=/workspace/zephyr/share/zephyr-package/cmake &&
+      mkdir -p /zmk-config/firmware &&
+      cp /workspace/.build/corne-right/zephyr/zmk.uf2 /zmk-config/firmware/corne-right.uf2"

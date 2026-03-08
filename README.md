@@ -1,6 +1,10 @@
 # zmk-config
 
-ZMK firmware config for a **Lily58** split keyboard.
+ZMK firmware config for two split keyboards:
+- **Lily58** (58 keys)
+- **Corne Mini** (36 keys, with displays)
+
+Shared keymap logic lives in `config/base.keymap` (5×3+3 core). Board-specific files include and wrap it.
 
 ## Building locally
 
@@ -13,6 +17,10 @@ docker compose run --rm lily58-left
 # Subsequent builds are fast:
 docker compose run --rm lily58-left
 docker compose run --rm lily58-right
+
+# Corne
+docker compose run --rm corne-left
+docker compose run --rm corne-right
 ```
 
 Output `.uf2` files are written to `firmware/`.
@@ -27,12 +35,8 @@ The west workspace is cached in `.docker-west/` and persists between runs. Delet
 
 ## Building via GitHub Actions
 
-Push to `main` to trigger a build. Firmware artifacts are available in the Actions tab.
+Push to `main` or open a PR to trigger a build. Firmware artifacts are available in the Actions tab.
 
 ## Acknowledgements
 
-Large parts of this config are based on urob's [amazing ZMK config](https://github.com/urob/zmk-config),
-which is also the source of several modules used here:
-[zmk-helpers](https://github.com/urob/zmk-helpers),
-[zmk-auto-layer](https://github.com/urob/zmk-auto-layer), and
-[zmk-adaptive-key](https://github.com/urob/zmk-adaptive-key).
+Large parts of this config are based on [this amazing ZMK config](https://github.com/urob/zmk-config). Thanks urob!
