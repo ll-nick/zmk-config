@@ -159,7 +159,7 @@ ZMK_MACRO(dot_spc,
     bindings = <&kp DOT &kp SPACE &sk LSHFT>;
 )
 
-ZMK_CONDITIONAL_LAYER(sys, NAV SYMBOL, SYS)
+ZMK_CONDITIONAL_LAYER(sys, MOUSE NUM, SYS)
 
 ZMK_BASE_LAYER(Base,
 //╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
