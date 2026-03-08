@@ -6,6 +6,10 @@ ZMK firmware config for two split keyboards:
 
 Shared keymap logic lives in `config/base.keymap` (5×3+3 core). Board-specific files include and wrap it.
 
+## Keymap
+
+![Keymap diagram](keymap-drawer/corne.svg)
+
 ## Building locally
 
 Requires Docker.
@@ -40,3 +44,5 @@ Push to `main` or open a PR to trigger a build. Firmware artifacts are available
 ## Acknowledgements
 
 Large parts of this config are based on [this amazing ZMK config](https://github.com/urob/zmk-config). Thanks urob!
+
+The keymap diagram is generated with [keymap-drawer](https://github.com/caksoylar/keymap-drawer).
