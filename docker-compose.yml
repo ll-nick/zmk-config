@@ -54,3 +54,17 @@ services:
       -DZMK_CONFIG=/zmk-config/config -DSHIELD=corne_right -DZephyr_DIR=/workspace/zephyr/share/zephyr-package/cmake &&
       mkdir -p /zmk-config/firmware &&
       cp /workspace/.build/corne-right/zephyr/zmk.uf2 /zmk-config/firmware/corne-right.uf2"
+
+  draw-keymaps:
+    build: keymap-drawer
+    volumes:
+      - ./.docker-west:/west:ro
+      - .:/zmk-config
+    working_dir: /zmk-config
+    command: >
+      bash -c "
+      keymap -c keymap-drawer/config.yaml parse -z config/corne.keymap  > keymap-drawer/corne.yaml  &&
+      keymap -c keymap-drawer/config.yaml parse -z config/lily58.keymap > keymap-drawer/lily58.yaml &&
+      keymap -c keymap-drawer/config.yaml draw  -z corne -l five_column_transform  keymap-drawer/corne.yaml  > keymap-drawer/corne.svg  &&
+      keymap -c keymap-drawer/config.yaml draw  -z lily58 keymap-drawer/lily58.yaml > keymap-drawer/lily58.svg &&
+      echo Done. SVGs written to keymap-drawer/"
