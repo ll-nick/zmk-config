@@ -80,42 +80,49 @@
             timeout-ms = <50>;
             key-positions = <LH1 RH0>;
             bindings = <&num_word NUM>;
+            layers = <BASE>;
         };
 
         combo_ae {
             timeout-ms = <50>;
             key-positions = <LT4 LM4>;
             bindings = <&uc UC_DE_AE>;
+            layers = <BASE>;
         };
 
         combo_ss {
             timeout-ms = <50>;
             key-positions = <LT3 LM3>;
             bindings = <&uc UC_DE_SS>;
+            layers = <BASE>;
         };
 
         combo_eur {
             timeout-ms = <50>;
             key-positions = <LT2 LM2>;
             bindings = <&uc UC_CURR_EURO>;
+            layers = <BASE>;
         };
 
         combo_ue {
             timeout-ms = <50>;
             key-positions = <RT1 RM1>;
             bindings = <&uc UC_DE_UE>;
+            layers = <BASE>;
         };
 
         combo_oe {
             timeout-ms = <50>;
             key-positions = <RT3 RM3>;
             bindings = <&uc UC_DE_OE>;
+            layers = <BASE>;
         };
 
         combo_degree {
             timeout-ms = <50>;
             key-positions = <LM2 LB2>;
             bindings = <&uc 0xB0 0>;  // °
+            layers = <BASE>;
         };
     };
 };
