@@ -35,15 +35,13 @@ parse_config:
     '&num_word 1':          Num Word
     '&magic_shift LSHFT 0': {t: Magic, h: Shift, s: Caps}
     '&ht LC(LS(V)) V': {t: V, h: Paste}
-    # Unicode - German (UC_DE_* macros expand to lowercase hex)
-    '&uc 0xe4 0xc4':   {t: "ä", s: "Ä"}
-    '&uc 0xdf 0x1e9e': {t: "ß", s: "ẞ"}
-    '&uc 0x20ac 0':    "€"
-    '&uc 0xfc 0xdc':   {t: "ü", s: "Ü"}
-    '&uc 0xf6 0xd6':   {t: "ö", s: "Ö"}
-    # Unicode - misc
+    # Unicode - Symbols
+    '&uc 0xe4 0xc4': "Ä"
+    '&uc 0xdf 0x1e9e': "ß"
+    '&uc 0x20ac 0': "€"
+    '&uc 0xfc 0xdc': "Ü"
+    '&uc 0xf6 0xd6': "Ö"
     '&uc 0xB0 0': "°"
-    # Unicode - arrows (tap / shift = double arrow)
     '&uc 0x2190 0x21D0': {t: "←", s: "⇐"}
     '&uc 0x2193 0x21D3': {t: "↓", s: "⇓"}
     '&uc 0x2191 0x21D1': {t: "↑", s: "⇑"}
