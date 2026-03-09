@@ -1,5 +1,4 @@
 draw_config:
-  n_columns: 2
   dark_mode: true
   glyph_tap_size: 20
   glyph_urls:
