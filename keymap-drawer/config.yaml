@@ -1,12 +1,15 @@
 draw_config:
-  n_columns: 2
   dark_mode: true
+  glyph_tap_size: 20
+  glyph_urls:
+    twemoji: "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/{}.svg"
 
 parse_config:
   zmk_additional_includes:
     - /west/zmk-helpers/include
     - /west/zmk-auto-layer/dts
     - /west/zmk-adaptive-key/include
+    - /west/zmk-unicode/include
 
   raw_binding_map:
     # Mouse movement
@@ -27,13 +30,48 @@ parse_config:
     '&sys_reset':  Reset
     '&bootloader': Boot
     # Custom behaviors / macros
-    '&dot_spc':             ". ⇧"
-    '&num_word 1':          Num Word
-    '&magic_shift LSHFT 0': {t: Magic, h: Shift, s: Caps}
+    '&dot_spc': ". ⇧"
+    '&num_word 1': Num Word
+    '&magic_shift LSHFT 0': "Magic Shift"
     '&ht LC(LS(V)) V': {t: V, h: Paste}
-    # Umlaut layer
-    '&kp RA(A)':  "ä"
-    '&kp RA(S)':  "ß"
-    '&kp RA(N5)': "€"
-    '&kp RA(U)':  "ü"
-    '&kp RA(O)':  "ö"
+    # Unicode - Symbols
+    '&uc 0xe4 0xc4': "Ä"
+    '&uc 0xdf 0x1e9e': "ß"
+    '&uc 0x20ac 0': "€"
+    '&uc 0xfc 0xdc': "Ü"
+    '&uc 0xf6 0xd6': "Ö"
+    '&uc 0xB0 0': "°"
+    '&uc 0x2190 0x21D0': {t: "←", s: "⇐"}
+    '&uc 0x2193 0x21D3': {t: "↓", s: "⇓"}
+    '&uc 0x2191 0x21D1': {t: "↑", s: "⇑"}
+    '&uc 0x2192 0x21D2': {t: "→", s: "⇒"}
+    # Unicode - emoji (Twemoji SVG glyphs for color rendering)
+    '&uc 0x2753 0':  {t: "$$twemoji:2753$$"}
+    '&uc 0x1F44B 0': {t: "$$twemoji:1f44b$$"}
+    '&uc 0x1F440 0': {t: "$$twemoji:1f440$$"}
+    '&uc 0x1F680 0': {t: "$$twemoji:1f680$$"}
+    '&uc 0x1F622 0': {t: "$$twemoji:1f622$$"}
+    '&uc 0x1F389 0': {t: "$$twemoji:1f389$$"}
+    '&uc 0x1F44D 0': {t: "$$twemoji:1f44d$$"}
+    '&uc 0x1F602 0': {t: "$$twemoji:1f602$$"}
+    '&uc 0x1F44C 0': {t: "$$twemoji:1f44c$$"}
+    '&uc 0x1F64F 0': {t: "$$twemoji:1f64f$$"}
+    '&uc 0x1F44F 0': {t: "$$twemoji:1f44f$$"}
+    '&uc 0x1F605 0': {t: "$$twemoji:1f605$$"}
+    '&uc 0x1F44E 0': {t: "$$twemoji:1f44e$$"}
+    '&uc 0x1F525 0': {t: "$$twemoji:1f525$$"}
+    '&uc 0x1F62C 0': {t: "$$twemoji:1f62c$$"}
+    '&uc 0x1F4A4 0': {t: "$$twemoji:1f4a4$$"}
+    '&uc 0x274C 0':  {t: "$$twemoji:274c$$"}
+    '&uc 0x2705 0':  {t: "$$twemoji:2705$$"}
+    '&uc 0x270C 0':  {t: "$$twemoji:270c$$"}
+    '&uc 0x1F60A 0': {t: "$$twemoji:1f60a$$"}
+    '&uc 0x1F937 0': {t: "$$twemoji:1f937$$"}
+    '&uc 0x1F648 0': {t: "$$twemoji:1f648$$"}
+    '&uc 0x1F607 0': {t: "$$twemoji:1f607$$"}
+    '&uc 0x1F923 0': {t: "$$twemoji:1f923$$"}
+    '&uc 0x1F61B 0': {t: "$$twemoji:1f61b$$"}
+    '&uc 0x1F61C 0': {t: "$$twemoji:1f61c$$"}
+    '&uc 0x1F618 0': {t: "$$twemoji:1f618$$"}
+    '&uc 0x2764 0':  {t: "$$twemoji:2764$$"}
+    '&uc 0x1F4AA 0': {t: "$$twemoji:1f4aa$$"}

@@ -67,4 +67,5 @@ services:
       keymap -c keymap-drawer/config.yaml parse -z config/lily58.keymap > keymap-drawer/lily58.yaml &&
       keymap -c keymap-drawer/config.yaml draw  -z corne -l five_column_transform  keymap-drawer/corne.yaml  > keymap-drawer/corne.svg  &&
       keymap -c keymap-drawer/config.yaml draw  -z lily58 keymap-drawer/lily58.yaml > keymap-drawer/lily58.svg &&
+      python3 keymap-drawer/fix_emoji_colors.py keymap-drawer/corne.svg keymap-drawer/lily58.svg &&
       echo Done. SVGs written to keymap-drawer/"
