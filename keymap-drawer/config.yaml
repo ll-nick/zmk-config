@@ -69,6 +69,10 @@ parse_config:
     '&uc 0x1F60A 0': {t: "$$twemoji:1f60a$$"}
     '&uc 0x1F937 0': {t: "$$twemoji:1f937$$"}
     '&uc 0x1F648 0': {t: "$$twemoji:1f648$$"}
+    '&uc 0x1F607 0': {t: "$$twemoji:1f607$$"}
+    '&uc 0x1F923 0': {t: "$$twemoji:1f923$$"}
+    '&uc 0x1F61B 0': {t: "$$twemoji:1f61b$$"}
     '&uc 0x1F61C 0': {t: "$$twemoji:1f61c$$"}
+    '&uc 0x1F618 0': {t: "$$twemoji:1f618$$"}
     '&uc 0x2764 0':  {t: "$$twemoji:2764$$"}
     '&uc 0x1F4AA 0': {t: "$$twemoji:1f4aa$$"}
