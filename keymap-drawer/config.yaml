@@ -31,9 +31,9 @@ parse_config:
     '&sys_reset':  Reset
     '&bootloader': Boot
     # Custom behaviors / macros
-    '&dot_spc':             ". ⇧"
-    '&num_word 1':          Num Word
-    '&magic_shift LSHFT 0': {t: Magic, h: Shift, s: Caps}
+    '&dot_spc': ". ⇧"
+    '&num_word 1': Num Word
+    '&magic_shift LSHFT 0': "Magic Shift"
     '&ht LC(LS(V)) V': {t: V, h: Paste}
     # Unicode - Symbols
     '&uc 0xe4 0xc4': "Ä"
